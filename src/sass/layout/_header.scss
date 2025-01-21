@@ -1,0 +1,149 @@
+/* HEADER */
+
+.main-header{
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media screen and (min-width: 992px){
+        &{
+            flex-direction: column;
+        }
+    }
+}
+
+#menu{
+    display: none;
+
+    /* hacer funcionar el checkbox -> hacer funcionar el menu toogle */
+
+    &:checked + .nav-bar{
+        display: block;
+    }
+
+    &:checked ~ .search-bar .menu-toogle .menu-toogle__label{
+        background-color: yellow;
+    }
+}
+
+/* NAVBAR */
+
+.nav-bar{
+    background-color: red;
+    display: none;
+
+    &__nav-list{ /* .nav-bar__navlist */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style-type: none;
+
+        @media screen and (min-width: 992px){
+            &{
+                flex-direction: row;
+            }
+        }
+    }
+
+    &__nav-item{
+        text-align: center;
+        background-color: pink;
+    }
+
+    &__nav-link{
+        display: block;
+        background-color: purple;
+        padding: 1rem 2rem; /* 16px y 32px */
+        color: white;
+    }
+
+    @media screen and (min-width: 992px){
+        &{
+            display: block;
+        }
+    }
+}
+
+/* SEARCH BAR */
+
+.search-bar{
+    display: flex;
+    background-color: olivedrab;
+    justify-content: space-around;
+
+    &__logo-container{
+        width: 18.75rem;
+        height: 3.5rem;
+    }
+
+    &__form-container{ /* fondo del contenedor del buscador */
+        padding: 1rem;
+        background-color: gold;
+        display: flex;
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    &__form-label{ /* buscar */
+        background-color: greenyellow;
+    }
+
+    &__form-search{ /* en esta clase se encuentra el input del buscador */
+        background-color: deeppink;
+    }
+
+    &__form-submit{ /* el boton de buscar */
+        background-color: darkslategray;
+    }
+
+    &__carrito-container{
+        flex: 0 0 3rem;
+        background-color: goldenrod;
+    }
+}
+
+/* MENU TOOGLE */
+
+.menu-toogle{
+    display: block;
+    background-color: red;
+    flex: 0 0 3rem;
+    position: relative;
+    cursor: pointer;
+
+    &__label {
+        display: block;
+        background-color: black;
+        height: 100%;
+    }
+
+    &__top-bread,
+    &__meat,
+    &__bottom-bread{
+        display: block;
+        background-color: #333;
+        height: .2rem;
+        position: absolute;
+        left: .5rem;
+        right: .5rem;
+    }
+
+    &__top-bread{
+        top: .8rem;
+    }
+
+    &__meat{
+        top: 50%;
+        margin-top: -.1rem;
+    }
+
+    &__bottom-bread{
+        bottom: .8rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        & { /* menu-toogle */
+            display: none;
+        }
+    }
+
+}

@@ -1,1 +1,5 @@
-
+@use './base/resets';
+@use './base/typography.scss';
+@use './components/cards';
+@use './layout/header';
+@use './pages/inicio';
