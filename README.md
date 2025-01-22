@@ -367,3 +367,120 @@ Dentro de la carpeta pages que se encuentra ubicada dentro de la carpeta sass, s
     gap: 1rem;
 }
 ```
+
+### Carpeta db
+Dentro de la carpeta db se encontrará el archivo producto.js, donde contendrá todos los productos de la página con sus descripciones, a este se usará con el main.js.
+```sh
+# producto.js
+
+const productos = [
+    {
+        id: 1,
+        nombre: "Armory",
+        foto: "image/armory.webp",
+        descripcion: "Armory Shell Pack - Mapex AR628SFU",
+        precio: 1819000.00
+    },
+    {
+        id: 2,
+        nombre: "Equinox",
+        foto: "image/equinox.webp",
+        descripcion: "Equinox - Mapex BPDLE628XFB",
+        precio: 4899.00
+    },
+    {
+        id: 3,
+        nombre: "Mars Birch",
+        foto: "image/mars-birch.webp",
+        descripcion: "Mapex Mars Birch Shell Pack 529SF 5-Pc Rock Shell Pack",
+        precio: 699.00
+    },
+    {
+        id: 4,
+        nombre: "Mars Maple",
+        foto: "image/mars-maple.webp",
+        descripcion: "Mars Maple Shell Pack - MAPEX MM529SFOG",
+        precio: 1242140.00
+    },
+    {
+        id: 5,
+        nombre: "Saturn Evolution",
+        foto: "image/saturn-evolution.webp",
+        descripcion: "Saturn Evo Shell Pack - Mapex SE529XMPQ",
+        precio: 2249990.00
+    },
+    {
+        id: 6,
+        nombre: "Venus",
+        foto: "image/venus.webp",
+        descripcion: "Venus - Mapex VE5294FTVC",
+        precio: 1098535.00
+    },
+    {
+        id: 7,
+        nombre: "DW 50th anniversary",
+        foto: "image/dw-50th-anniversary.webp",
+        descripcion: "DW 50th Anniversary - Construidos con una combinación de caqui (persimmon) y abeto (spruce), maderas seleccionadas a mano para este modelo conmemorativo.",
+        precio: 11999.00
+    },
+    {
+        id: 8,
+        nombre: "Parches Uno by Evans",
+        foto: "image/set-parches-evans-uno.webp",
+        descripcion: "Set Parches Uno By Evans UPG2CLS22 12'',13'',16'' doble capa,14'' ARENADO ,22'' EQ4 Capa simple con anillo",
+        precio: "104061.50",
+    },
+    {
+        id: 9,
+        nombre: "Zildjian - Planet Z",
+        foto: "image/platillos-zildjian-planet-z.webp",
+        descripcion: "Set De Platillos Zildjian Planet Z Zp4pk 14-16-20",
+        precio: 639981.30
+    }
+]
+
+export default productos
+```
+Este archivo que contendrá la data de los productos, se unirá al main.js donde se creará dinamicamente, la estructura de las tarjetas que deberían de estar en el archivo html. Entonces lo que se crea el main.js, tomará la información del producto.js y se lo dará a la estructura html creada con js:
+```sh
+# main.js
+
+import productos from './db/producto'
+import './sass/main.scss'
+
+console.log(productos) // array Productos
+
+const contenedorProductos = document.getElementById('container-productos')
+console.log(contenedorProductos)
+
+const start = () => {
+    console.warn('Se cargó todo el HTML')
+
+    let html = ''
+    
+    productos.forEach(prod => {
+        console.log(prod)
+    
+        html += `<div class="card">
+            <article class="card__article">
+                <div class="card__image-container">
+                    <img class="card__image" src="${prod.foto}" alt="${prod.nombre}">
+                </div>
+                <div class="card__content">
+                    <h2 class="card__heading">${prod.nombre}</h2>
+                    <div class="card__description">
+                        <p>${prod.descripcion}</p>
+                    </div>
+                </div>
+            </article>
+        </div>`
+    })
+    
+    console.log(html) /* Voy a tener varios div.card * 9 -> */
+
+    contenedorProductos.innerHTML = html
+
+}
+
+window.addEventListener('DOMContentLoaded', start)
+```
