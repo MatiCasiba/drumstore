@@ -484,3 +484,18 @@ const start = () => {
 
 window.addEventListener('DOMContentLoaded', start)
 ```
+* Nota: a casua de esta configuración, al momento de agregar otros porductos, no se necesitará armar todo en html, ya que lo tendremos armado en el main.js, por lo tanto, el contenido de tarjetas que se encontraba dentro del html, fue eliminado:
+```sh
+    <main>
+      <section class="section-cards">
+        <header class="section-cards__header">
+          <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+          <p>Se encontraron X productos</p>
+        </header>
+      </section> <!-- section-cards -->
+
+      <section class="cards-container" id="container-productos">
+        # dentro de este section se encontraba el anterior contenido de tarjetas que fue reemplzado por el main.js
+      </section>
+    </main>
+```
