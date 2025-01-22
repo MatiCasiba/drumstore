@@ -1,3 +1,4 @@
+@use '../base/variables';
 /* HEADER */
 
 .main-header{
@@ -67,7 +68,7 @@
 
 .search-bar{
     display: flex;
-    background-color: olivedrab;
+    background-color: variables.$color-4;
     justify-content: space-around;
 
     &__logo-container{
@@ -75,16 +76,22 @@
         height: 3.5rem;
     }
 
+    &__logo-img{
+        max-width: 100%; // Hace que la imagen nunca supere el tamaño del contenedor
+        max-height: 100%; // Evita que la imagen se salga del contenedor
+        object-fit: contain; // Asegura que la imagen se ajuste sin recortarse
+    }
+
     &__form-container{ /* fondo del contenedor del buscador */
         padding: 1rem;
-        background-color: gold;
+        background-color: variables.$color-4; /* blanco */
         display: flex;
         flex-basis: 100%;
         justify-content: center;
     }
 
     &__form-label{ /* buscar */
-        background-color: greenyellow;
+        background-color: variables.$color-3;
     }
 
     &__form-search{ /* en esta clase se encuentra el input del buscador */

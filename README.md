@@ -1,5 +1,5 @@
 * Nombre: Matias Casiba
-* Link Repo GitHub:
+* Link Repo GitHub: https://github.com/MatiCasiba/drumstore
 * Link Netlify:
 
 # Proyecto Integrador - Etapa 1
@@ -31,22 +31,23 @@ Ene el elemento header se encontrará la barra de navegación y un menú de opci
       </nav> <!-- nav-bar -->
 
       <div class="search-bar">
-        <div class="search-bar__logo-container">Logo</div>
-      </div>
-      <form action="#" class="search-bar__form-container">
-        <label for="busqueda" class="search-bar__form-label">Buscar</label>
-        <input type="search" id="busqueda" class="search-bar__form-search">
-        <button type="submit" class="search-bar__form-submit">Buscar</button>
-      </form> <!-- search-bar__form-continer -->
-
-      <div class="search-bar__carrito-container">C</div>
-      <div class="menu-toogle">
-        <label for="" class="menu-toogle__label">
-          <span class="menu-toogle__top-bread"></span>
-          <span class="menu-toogle__meat"></span>
-          <span class="menu-toogle__bottom-bread"></span>
-        </label>
-      </div> <!-- menu-toogle -->
+        <div class="search-bar__logo-container">
+          <img class="search-bar__logo-img" src="/public/logo/ds-logo-sf.png" alt="logo ds">
+        </div>
+        <form action="#" class="search-bar__form-container">
+          <label for="busqueda" class="search-bar__form-label">Buscar</label>
+          <input type="search" id="busqueda" class="search-bar__form-search">
+          <button type="submit" class="search-bar__form-submit">Buscar</button>
+        </form> <!-- search-bar__logo-container -->
+        <div class="search-bar__carrito-container">C</div>
+        <div class="menu-toogle">
+          <label for="menu" class="menu-toogle__label">
+            <span class="menu-toogle__top-bread"></span>
+            <span class="menu-toogle__meat"></span>
+            <span class="menu-toogle__bottom-bread"></span>
+          </label>
+        </div> <!-- .menu-toogle -->
+      </div> <!-- .search-bar -->
 
     </header>
 ```
@@ -103,6 +104,21 @@ body {
     font-family: "Open Sans", sans-serif;
     font-size: 100%; // default navegadores 16px
 }
+```
+* _variables.scss -> este archivo va a servir para crear variables que los voy a poder aplicar en otros archivos, en este caso la usaré para manejar colores:
+```sh
+$color-1: #403d39;
+$color-2: #252422;
+$color-3: #eb5e28;
+$color-4: #F6F6F6;
+```
+Al momento de usarlos se deberá relizar de la siguiente forma:
+```sh
+# en _header.scss:
+@use '../base/variables';
+
+# un ejemplo
+background-color: variables.$color-3;
 ```
 
 #### Carpeta components
@@ -274,6 +290,12 @@ En esta carpeta se encontrará todo el diseño del elemento header del html, la 
     &__logo-container{
         width: 18.75rem;
         height: 3.5rem;
+    }
+
+    &__logo-img{
+        max-width: 100%; # hace que la imagen nunca supere el tamaño del contenedor
+        max-height: 100%; # evita que la imagen se salga del contenedor
+        object-fit: contain; # Asegura que la imagen se ajuste sin recortarse
     }
 
     &__form-container{ # fondo del contenedor del buscador 
@@ -509,4 +531,5 @@ precio: "$ 1.819.000,00"
 
 precio: "US$ 4.899,00"
 ```
+
 
