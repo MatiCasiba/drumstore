@@ -499,3 +499,14 @@ window.addEventListener('DOMContentLoaded', start)
       </section>
     </main>
 ```
+
+#### Modificación de los precios en producto.js
+Se modifico la data de los precios, ahora se encuentran en comillas y con signos del dinero:
+```sh
+#ejemplos: 
+
+precio: "$ 1.819.000,00"
+
+precio: "US$ 4.899,00"
+```
+
