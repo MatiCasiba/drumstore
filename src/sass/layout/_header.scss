@@ -29,7 +29,7 @@
 /* NAVBAR */
 
 .nav-bar{
-    background-color: red;
+    background-color: variables.$color-3;
     display: none;
 
     &__nav-list{ /* .nav-bar__navlist */
@@ -52,9 +52,10 @@
 
     &__nav-link{
         display: block;
-        background-color: purple;
+        background-color: variables.$color-3;
         padding: 1rem 2rem; /* 16px y 32px */
         color: white;
+        text-decoration: none;
     }
 
     @media screen and (min-width: 992px){
@@ -68,7 +69,7 @@
 
 .search-bar{
     display: flex;
-    background-color: variables.$color-4;
+    background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
     justify-content: space-around;
 
     &__logo-container{
@@ -84,18 +85,24 @@
 
     &__form-container{ /* fondo del contenedor del buscador */
         padding: 1rem;
-        background-color: variables.$color-4; /* blanco */
+        background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
         display: flex;
         flex-basis: 100%;
         justify-content: center;
     }
 
     &__form-label{ /* buscar */
-        background-color: variables.$color-3;
+        background-color: none;
+    }
+
+    &__logo-search{
+        max-width: 20px;
+        margin-right: 20px;
+        
     }
 
     &__form-search{ /* en esta clase se encuentra el input del buscador */
-        background-color: deeppink;
+        background-color: variables.$color-4;
     }
 
     &__form-submit{ /* el boton de buscar */
@@ -104,7 +111,12 @@
 
     &__carrito-container{
         flex: 0 0 3rem;
-        background-color: goldenrod;
+        background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
+    }
+
+    &__cart-logo{
+        width: 40px;
+        margin: 5px 0 5px 0;
     }
 }
 

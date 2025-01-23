@@ -310,6 +310,12 @@ En esta carpeta se encontrará todo el diseño del elemento header del html, la 
         background-color: ... ;
     }
 
+    &__logo-search{ # logo del buscador
+        max-width: 20px;
+        margin-right: 20px;
+        
+    }
+
     &__form-search{ #en esta clase se encuentra el input del buscador
         background-color: ... ;
     }
@@ -324,6 +330,39 @@ En esta carpeta se encontrará todo el diseño del elemento header del html, la 
     }
 }
 ```
+Agregué 2 logos para el buscador y para el carrito de compra, le configuré su tamaño:
+```sh
+#index.html
+<div class="search-bar">
+    <div class="search-bar__logo-container">
+      <img class="search-bar__logo-img" src="/logo/ds-logo-sf.png" alt="logo ds"> # el logo de la página
+    </div>
+    <form action="#" class="search-bar__form-container">
+      <label for="busqueda" class="search-bar__form-label">
+        <img class="search-bar__logo-search" src="/logo/logo-search.png" alt="logo del bucador"> # logo del buscador
+      </label>
+    </form>
+    <div class="search-bar__carrito-container">
+      <img class="search-bar__cart-logo" src="/logo/cart-logo.png" alt="logo de carro"> #logo del carro
+    </div>
+</div>
+
+# _header.scss
+.search-bar{
+    &__logo-search{
+        max-width: 20px;
+        margin-right: 20px;
+        
+    }
+
+    &__cart-logo{
+        width: 40px;
+        margin: 5px 0 5px 0;
+    }
+}
+```
+También eh cambiado sus colores de fondo, lo encontrarás como: variables.$color-3 y variables.$color-4, también estarán las dos juntas para crear un degradado (background: linear-gradient(900deg, variables.$color-3, variables.$color-4);) 
+
 
 * menu-toogle:
 ```sh
