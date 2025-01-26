@@ -300,9 +300,9 @@ En esta carpeta se encontrará todo el diseño del elemento header del html, la 
 
     &__form-container{ # fondo del contenedor del buscador 
         padding: 1rem;
-        background-color: ... ;
+        background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
         display: flex;
-        flex-basis: 100%;
+        flex-basis: 1000px;
         justify-content: center;
     }
 
@@ -569,6 +569,187 @@ Se modifico la data de los precios, ahora se encuentran en comillas y con signos
 precio: "$ 1.819.000,00"
 
 precio: "US$ 4.899,00"
+```
+
+## Breakpoints
+La página tendrá breakpoints, se pensó primero en realizarlo para un dispositivo mobil/celular, pero a medida que se agrande la pantalla (se ve en otro dispositivo, sea tablet o pc/notebook), se comportará de diferente manera la página
+
+### Breakpoints en el heder
+Todo lo trabajado del header, se encuentra en el archivo _header.scss dentro de la carpeta lyout:
+
+* Medium -> cuando la pantalla sea >=768px:
+```sh
+.search-bar{
+
+    &__form-search{
+        @media screen and (min-width: 768px) {
+            & {
+                width: 70%;
+            }
+        }
+    }
+    
+    &__cart-logo{
+        
+        @media screen and (min-width: 768px){
+            max-height: 35px;
+        }
+    }
+}
+```
+
+* Large -> cuando la pantalla sea >=992px:
+```sh
+.nav-bar{
+    &__nav-list{
+
+        @media screen and (min-width: 992px){
+            &{
+                flex-direction: row;
+                justify-content: center;
+                font-size: 0.7rem;
+            }
+        }
+    }
+
+    &__nav-link{
+        position: relative;
+        @media screen and (min-width: 992px) {
+            &{
+                font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+            }
+            &:active{
+                color: variables.$color-1;
+            }
+        }
+       
+}
+
+.search-bar{
+
+    height: 3.7rem;
+
+    &__logo-container{
+
+        @media screen and (min-width: 992px){
+            &{
+                width: 5rem;
+                height: 4rem;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    &__form-container{
+        @media screen and (min-width: 992px){
+            &{
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__logo-search{
+        @media screen and (min-width: 992px){
+            &{
+                max-height: 30px;
+            }
+        }
+        
+    }
+
+    &__form-search{
+        @media screen and (min-width: 992px){
+            &{
+                width: 30%;
+                margin-left: 20px;
+            }
+        }
+        
+    }
+
+    &__carrito-container{
+        flex: 0 0 3rem;
+        background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
+
+        @media screen and (min-width: 992px){
+            &{
+                flex: 0 0 5rem;
+                margin: auto;
+                background: none;
+            }
+        }
+    }
+
+}
+```
+* Extra-large -> Cuando la pantalla >= 1200px el nav-bar pasará a estar debajo del search-bar y los links tendrán una animación de subrayado : 
+```sh
+.main-header{
+    
+    @media screen and (min-width: 1200px){
+        & {
+            flex-direction: column; # mantiene la disposicion en columna 
+            align-items: center; # centra los elementos 
+        }
+    }
+
+.nav-bar{
+
+    &__nav-list{
+        @media screen and (min-width: 1200px){
+            font-size: 0.9rem;
+        }
+    }
+
+    &__nav-link{
+        @media screen and (min-width: 1200px) {
+            &{
+                background: variables.$color-3;
+                color: variables.$color-4;
+                font-size: .8rem;
+            }
+
+            # con esta parte, le daré un animacion se subrayado cuando el usuario se pare sobre los links
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                border-radius: 100%;
+                margin-bottom: 10px;
+                background-color: variables.$color-4;
+                transition: width 0.3s ease-in-out;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+    }
+
+.search-bar{
+
+    &__form-search{
+
+        @media screen and (min-width: 1200px) {
+            & {
+                width: 50%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        & {
+            order: 1;
+            width: 100%;
+        }
+    }
+
+}
 ```
 
 

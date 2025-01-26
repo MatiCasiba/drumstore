@@ -4,10 +4,19 @@
 .main-header{
     display: flex;
     flex-direction: column-reverse;
+    background: variables.$color-3;
 
     @media screen and (min-width: 992px){
         &{
             flex-direction: column;
+        }
+    }
+
+    
+    @media screen and (min-width: 1200px){
+        & {
+            flex-direction: column;
+            align-items: center;
         }
     }
 }
@@ -29,7 +38,7 @@
 /* NAVBAR */
 
 .nav-bar{
-    background-color: variables.$color-3;
+    background: variables.$color-3;
     display: none;
 
     &__nav-list{ /* .nav-bar__navlist */
@@ -37,17 +46,23 @@
         flex-direction: column;
         justify-content: center;
         list-style-type: none;
+        background: variables.$color-3;
 
         @media screen and (min-width: 992px){
             &{
                 flex-direction: row;
+                justify-content: center;
+                font-size: 0.7rem;
             }
+        }
+
+        @media screen and (min-width: 1200px){
+            font-size: 0.9rem;
         }
     }
 
     &__nav-item{
         text-align: center;
-        background-color: pink;
     }
 
     &__nav-link{
@@ -56,11 +71,59 @@
         padding: 1rem 2rem; /* 16px y 32px */
         color: white;
         text-decoration: none;
+        position: relative;
+
+        &:active {
+            color: black;
+        }
+
+        @media screen and (min-width: 992px) {
+            &{
+                font-size: 1rem;
+                font-weight: 600;
+                letter-spacing: 2px;
+            }
+            &:active{
+                color: variables.$color-1;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            &{
+                background: variables.$color-3;
+                color: variables.$color-4;
+                font-size: .8rem;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 2px;
+                border-radius: 100%;
+                margin-bottom: 10px;
+                background-color: variables.$color-4;
+                transition: width 0.3s ease-in-out;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
     }
 
     @media screen and (min-width: 992px){
         &{
             display: block;
+        }
+    }
+
+    @media screen and (min-width: 1200px){
+        & {
+            order: 2; /* aseguro que nva-bar esté debajo del serach-bar */
+            width: 100%;
+            background-color: variables.$color-4;
         }
     }
 }
@@ -69,54 +132,129 @@
 
 .search-bar{
     display: flex;
-    background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
-    justify-content: space-around;
+    background: variables.$color-3;
+    /* justify-content: space-around; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 3.7rem;
+    margin: 0 auto;
+    
 
     &__logo-container{
         width: 18.75rem;
         height: 3.5rem;
+
+        @media screen and (min-width: 992px){
+            &{
+                width: 5rem;
+                height: 4rem;
+                margin-left: 10px;
+            }
+        }
     }
 
     &__logo-img{
-        max-width: 100%; // Hace que la imagen nunca supere el tamaño del contenedor
-        max-height: 100%; // Evita que la imagen se salga del contenedor
-        object-fit: contain; // Asegura que la imagen se ajuste sin recortarse
+        max-width: 100%; 
+        max-height: 100%; 
+        object-fit: contain;
     }
 
-    &__form-container{ /* fondo del contenedor del buscador */
+    &__form-container{
         padding: 1rem;
-        background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
         display: flex;
-        flex-basis: 100%;
+        flex-basis: 1000px;
         justify-content: center;
+
+        @media screen and (min-width: 992px){
+            &{
+                max-width: 100%;
+            }
+        }
     }
 
-    &__form-label{ /* buscar */
+    &__form-label{
         background-color: none;
+        
     }
-
     &__logo-search{
-        max-width: 20px;
-        margin-right: 20px;
+        max-height: 20px;
+
+        @media screen and (min-width: 992px){
+            &{
+                max-height: 30px;
+            }
+        }
         
     }
 
-    &__form-search{ /* en esta clase se encuentra el input del buscador */
+    &__form-search{
         background-color: variables.$color-4;
+        margin-left: 10px;
+        border-radius: 20px;
+
+        @media screen and (min-width: 768px) {
+            & {
+                width: 70%;
+            }
+        }
+
+        @media screen and (min-width: 992px){
+            &{
+                width: 30%;
+                margin-left: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            & {
+                width: 50%;
+            }
+        }
     }
 
-    &__form-submit{ /* el boton de buscar */
-        background-color: darkslategray;
+    &__form-submit{
+        background-color: variables.$color-4;
+        margin-left: 2px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        padding: 5px;
+
+        @media screen and (min-width: 1200px) {
+            &:hover{
+                background-color: variables.$color-3;
+            }
+        }
     }
 
     &__carrito-container{
         flex: 0 0 3rem;
-        background: linear-gradient(900deg, variables.$color-3, variables.$color-4);
+        margin: auto;
+
+        @media screen and (min-width: 992px){
+            &{
+                flex: 0 0 5rem;
+                margin: auto;
+                background: none;
+            }
+        }
     }
 
     &__cart-logo{
-        width: 40px;
-        margin: 5px 0 5px 0;
+        max-height: 30px;
+        object-fit: contain;
+        
+        @media screen and (min-width: 768px){
+            max-height: 35px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        & {
+            order: 1;
+            width: 100%;
+        }
     }
 }
 
