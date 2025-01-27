@@ -752,4 +752,55 @@ Todo lo trabajado del header, se encuentra en el archivo _header.scss dentro de 
 }
 ```
 
+## Diseño en tarjetas
+Eh agregado algunas configuraciones a la tarjeta, como darle algo de espacio a los textos dentro para que no estén tan pedgado el titulo con la descripción, reducí un poco el alto de las tarjetas. Ahora El contenedor de tarjetas ahora no se puede extender más de 1400px, todo esto se encuentra en cards.scss que está dentro de la carpeta components:
 
+```sh
+# las nuevas configuraciones agregadas
+
+@use '../base/variables'; # lo necesito pasa usar los colores 
+
+main{
+    background-color: variables.$color-4;
+}
+.section-cards{
+    display: flex;
+
+    &__header{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.cards-container{
+    background-color: variables.$color-4;
+    padding: 3%;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+
+    background-color:  variables.$color-3;
+    color: variables.$color-1;
+
+    &__content{
+        padding: 2%;
+    }
+    &__description{
+        margin-top: 20px;
+        width: 200px;
+        font-size: 0.9rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        & {
+            width: 220px;
+            max-width: 300px;
+            height: 350px;
+        }
+    }
+}
+```
