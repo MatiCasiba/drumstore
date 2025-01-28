@@ -3,6 +3,7 @@
 main{
     background-color: variables.$color-4;
 }
+
 .section-cards{
     display: flex;
 
@@ -22,9 +23,13 @@ main{
 }
 
 .card {
+    display: flex;
+    flex-direction: column;
+
     min-width: 400px;
     max-width: 500px;
     height: 200px;
+    
 
     background-color:  variables.$color-3;
     color: variables.$color-1;
@@ -33,15 +38,7 @@ main{
     overflow: hidden;
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.3);
 
-    transition: transform .2s;
-
-    &:hover,
-    &:focus {
-        /* radianes 2pi, gradianes 400, decimales 360 grdos, vueltas 1trun */
-        transform: scale(1.03) skew(0deg) rotate(2deg);
-        transform-origin: bottom;
-        box-shadow: 0 7px 8px 0 rgba(0,0,0,0.5);
-    }
+    transition: transform .3s;
 
     &__article {
         display: flex;
@@ -55,30 +52,44 @@ main{
     &__image-container {
         height: 200px;
         overflow: hidden;
-        clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); /* estado inicial */
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
     }
 
     &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; // distribuyo el contenido y empujo el botón hacia abajo
+        flex-grow: 1; // logro que el contenido ocupe el espacio restante
         padding: 2%;
+
+    }
+    &__heading{
+        font-size: 1.2rem;
     }
     &__description{
-        margin-top: 20px;
-        width: 200px;
-        font-size: 0.9rem;
+        margin-top: 5px;
+        width: 250px;
+        font-size: 0.8rem;
     }
 
-    &:hover &__image-container,
-    &:focus &__image-container {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* estado final */
+    &__boton {
+        text-decoration: none;
+        font-size: 0.8rem;
+        margin-top: auto; // Empuja el botón hacia abajo
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: variables.$color-1;
+        color: variables.$color-3;
+        border-radius: 5px;
     }
-
-    /*  responsive -> 992px */
+    
 
     @media screen and (min-width: 992px) {
         & {
-            width: 220px;
-            max-width: 300px;
-            height: 350px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         &__article {
@@ -86,12 +97,92 @@ main{
         }
 
         & &__image-container { /* .card .card__image-container */
-            clip-path: polygon(0 0, 100% 0, 100% 200px, 0 180px); /* Estado inicial */
+            clip-path: polygon(0 0, 100% 0, 100% 200px, 0 180px);
         }
-
         &:hover &__image-container,
         &:focus &__image-container {
-            clip-path: polygon(0 0, 100% 0, 100% 190px, 0 200px); /* Estado final */;
+            clip-path: polygon(0 0, 100% 0, 100% 190px, 0 200px); 
+        }
+
+        &__heading {
+            font-size: 1.5rem;
+            
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1; // Ocupa todo el espacio disponible
+            height: 100%; // Asegura que ocupe toda la altura de la tarjeta
+        }
+
+        &__description{
+            width: 300px;
+            font-size: 1rem;
+        }
+
+        &__boton {
+            margin-top: 20px; // Empuja el botón al final del contenido
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: variables.$color-1;
+            color: variables.$color-3;
+            border-radius: 5px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        & {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
+        }
+    
+        &__image-container {
+            height: 220px;
+            overflow: hidden;
+        }
+    
+        &__heading {
+            font-size: 1.5rem;
+            text-align: center;
+            
+        }
+    
+        &__description {
+            margin-top: 15px;
+            margin-left: 5px;
+            width: 400px;
+            font-size: 1rem;
+        }
+    
+        &__content {
+            flex: 1; /* Permite que el contenido crezca, dejando espacio para el botón */
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            
+        }
+    
+        &__boton {
+            margin-top: 20px; /* Empuja el botón hacia la parte inferior */
+            padding: 10px;
+            text-align: center;
+            display: block;
+            width: 100%; /* Hace que ocupe todo el ancho de la tarjeta */
+            background-color: variables.$color-1; /* Asegura que tenga un fondo visible */
+            color: variables.$color-3;
+        }
+    
+        &:hover,
+        &:focus {
+            /* radianes 2pi, gradianes 400, decimales 360 grdos, vueltas 1trun */
+            transform: scale(1) skew(0deg) rotate(2deg);
+            transform-origin: bottom;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.5);
         }
     }
     

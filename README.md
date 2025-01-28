@@ -804,3 +804,176 @@ main{
     }
 }
 ```
+
+### Boton de compra
+En la tarjeta se encuentra el boton de compra, tuve que agregarlo en el js para que se encuentre dentro de la tarjeta, no será un elemento button, sino que será un elemento de anclaje, lo ubiqué dentro del contenedor con la clase "card__content":
+```sh
+html += `<div class="card">
+            <article class="card__article">
+                <div class="card__image-container">
+                    <img class="card__image" src="${prod.foto}" alt="${prod.nombre}">
+                </div>
+                <div class="card__content">
+                    <h2 class="card__heading">${prod.nombre}</h2>
+                    <div class="card__description">
+                        <p><b>${prod.precio}</b></p>
+                        <p>${prod.descripcion}</p>
+                    </div>
+                    # ac+a se encuentra el boton
+                    <a class="card__boton" href="#">COMPRAR</a>
+                </div>
+            </article>
+        </div>`
+```
+* Su configuración en sass (esta en el archivo _cards.scss):
+```sh
+.card {
+    display: flex;
+    flex-direction: column;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; # distribuyo el contenido y empujo el botón hacia abajo
+        flex-grow: 1; # logro que el contenido ocupe el espacio restante
+        padding: 2%;
+
+    }
+
+    &__boton {
+        text-decoration: none;
+        font-size: 0.8rem;
+        margin-top: auto; # Empuja el botón hacia abajo
+        display: block;
+        text-align: center;
+        padding: 10px;
+        background-color: variables.$color-1;
+        color: variables.$color-3;
+        border-radius: 5px;
+    }
+```
+Te explicaré como fueron sus ajustes dentro del __content:
+* display: flex; flex-direction: column; -> Organiza los elementos verticalmente dentro del contenido de la tarjeta
+* justify-content: space-between; -> Distribuye los elementos de manera uniforme, dejando el botón al final
+* flex-grow: 1; -> Permite que el contenido ocupe el espacio disponible, empujando el botón hacia abajo
+
+
+### Breakpoints de la tarjeta
+La tarjeta se comportará de distintas maneras respecto al tamaño de pantalla, cuando la pantalla sea >=1200px, las tarjetas tendrán animaciones, le eh quitado las animaciones menor a este tamaño ya que serán pantallas en dispositivos mobil (tambien entran las tablet):
+
+* Large -> cuando la pantalla sea >= 992px: esta dentro de las categorias de la tablets, por lo tanto seguirá sin animaciones. En el caso de que haya un usuario con una notebook >=992px, solo cuando se pare sobre la tarjeta, verá que la linea en diagonal que dibide la descripcion de la imgane, se mueve:
+
+```sh
+ .card{
+    @media screen and (min-width: 992px) {
+        & {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        &__article {
+            flex-direction: column;
+        }
+
+        & &__image-container {
+            clip-path: polygon(0 0, 100% 0, 100% 200px, 0 180px);
+        }
+        &:hover &__image-container,
+        &:focus &__image-container {
+            clip-path: polygon(0 0, 100% 0, 100% 190px, 0 200px);
+        }
+
+        &__heading {
+            font-size: 1.5rem;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1; # Ocupa todo el espacio disponible
+            height: 100%; # Asegura que ocupe toda la altura de la tarjeta
+        }
+
+        # tamaño de letras/numeros y el ancho del
+        &__description{
+            width: 300px;
+            font-size: 1rem;
+        }
+
+        &__boton {
+            margin-top: 20px; # Empuja el botón al final del contenido
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: variables.$color-1;
+            color: variables.$color-3;
+            border-radius: 5px;
+        }
+    }
+ }
+```
+
+Extra-large -> Cuando la pantalla sea >= 1200px: Cuando haya este tamaño de pantalla, entonces estamos hablando de una notebook o un pc, por lo tanto este tendrá animacion en las tarjetas y se verá de distinta manera a las otras tarjetas cuando el dispositivo es chicio, lo notarás con el botón de comprar:
+```sh
+.card{
+
+    @media screen and (min-width: 1200px) {
+        & {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; # Asegura que los elementos se distribuyan correctamente 
+        }
+    
+        &__image-container {
+            height: 220px;
+            overflow: hidden;
+        }
+    
+        &__heading {
+            font-size: 1.5rem;
+            text-align: center;
+            
+        }
+    
+        &__description {
+            margin-top: 15px;
+            margin-left: 5px;
+            width: 400px;
+            font-size: 1rem;
+        }
+    
+        &__content {
+            flex: 1; # Permite que el contenido crezca, dejando espacio para el botón
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            
+        }
+    
+        &__boton {
+            margin-top: 20px; #Empuja el botón hacia la parte inferior 
+            padding: 10px;
+            text-align: center;
+            display: block;
+            width: 100%; # Hace que ocupe todo el ancho de la tarjeta 
+            background-color: variables.$color-1; #Asegura que tenga un fondo visible 
+            color: variables.$color-3;
+        }
+    
+        # esto es la animacion cuando el usuario se pare sobre las tarjetas
+        &:hover,
+        &:focus {
+            /* radianes 2pi, gradianes 400, decimales 360 grdos, vueltas 1trun */
+            transform: scale(1) skew(0deg) rotate(2deg);
+            transform-origin: bottom;
+            box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.5);
+        }
+    }
+    
+}
+```
+
+

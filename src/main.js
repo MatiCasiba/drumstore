@@ -22,9 +22,10 @@ const start = () => {
                 <div class="card__content">
                     <h2 class="card__heading">${prod.nombre}</h2>
                     <div class="card__description">
-                        <p>${prod.precio}</p>
+                        <p><b>${prod.precio}</b></p>
                         <p>${prod.descripcion}</p>
                     </div>
+                    <a class="card__boton" href="#">COMPRAR</a>
                 </div>
             </article>
         </div>`

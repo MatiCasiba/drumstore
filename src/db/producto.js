@@ -3,7 +3,7 @@ const productos = [
         id: 1,
         nombre: "Armory",
         foto: "image/armory.webp",
-        descripcion: "Armory Shell Pack - Mapex AR628SFU",
+        descripcion: "Armory Shell - Mapex AR628SFU",
         precio: "$ 1.819.000,00"
     },
     {
@@ -17,7 +17,7 @@ const productos = [
         id: 3,
         nombre: "Mars Birch",
         foto: "image/mars-birch.webp",
-        descripcion: "Mapex Mars Birch Shell Pack 529SF 5-Pc Rock Shell Pack",
+        descripcion: "Mapex Mars Birch Shell Pack 529SF 5-Pc Rock ...",
         precio: "US$ 699,00"
     },
     {
@@ -31,7 +31,7 @@ const productos = [
         id: 5,
         nombre: "Saturn Evolution",
         foto: "image/saturn-evolution.webp",
-        descripcion: "Saturn Evo Shell Pack - Mapex SE529XMPQ",
+        descripcion: "Saturn Evo - Mapex SE529XMPQ",
         precio: "$ 2.249.990,00"
     },
     {
@@ -45,14 +45,14 @@ const productos = [
         id: 7,
         nombre: "DW 50th anniversary",
         foto: "image/dw-50th-anniversary.webp",
-        descripcion: "DW 50th Anniversary, construidos con una combinación de caqui (persimmon) y abeto (spruce)",
+        descripcion: "Construidos con una combinación de caqui  y abeto ",
         precio: "US$ 11.999,00"
     },
     {
         id: 8,
         nombre: "Parches Uno by Evans",
         foto: "image/set-parches-evans-uno.webp",
-        descripcion: "Set Parches Uno By Evans UPG2CLS22 12'',13'',16'' doble capa,14'' ARENADO ,22'' EQ4 Capa simple con anillo",
+        descripcion: "Set Parches Uno By Evans UPG2CLS22 12'',13'',16''...",
         precio: "$ 104.061,50",
     },
     {
