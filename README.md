@@ -976,6 +976,49 @@ Extra-large -> Cuando la pantalla sea >= 1200px: Cuando haya este tamaño de pan
 }
 ```
 
+## Contacto
+En contacto vamos a tener un archivo contacto.html y contacto.js(acá se va a importar el main.sass), estos archivo se encuentra en src>pages>contacto. Dentro de esye archivo tendrá el header del index.html y habrá un formulario, tambien se le agregará un mapa de donde se encuentra el lugar.
+
+### Main
+Dentro el elemento main que esta dentro estará el contenido del formulario, se armo de la siguiente forma:
+```sh
+<main>
+
+        <div class="formulario">
+            <form action="#" method="post">
+                <h1>Contáctanos</h1>
+
+                <div class="formulario__datos">
+                    <label for="">Nombre *</label>
+                    <input type="text" class="formulario__entrada-datos">
+                </div>
+
+                <div class="formulario__datos">
+                    <label for="">Apellido *</label>
+                    <input type="text" class="formulario__entrada-datos">
+                </div>
+
+                <div class="formulario__datos">
+                    <label for="">Email *</label>
+                    <input type="email" name="email" class="formulario__entrada-datos">
+                </div>
+
+                <div class="formulario__datos">
+                    <label for="">Escribenos un mensaje:</label>
+                    <textarea class="formulario__entrada-datos" name="mensaje"></textarea>
+                </div>                
+
+                <div class="fomulario__datos">
+                    <button type="submit">Enviar</button>
+                    <p class="formulario__texto">¡Gracias por tu mensaje!</p>
+                </div>
+
+            </form>
+        </div>
+
+      </main>
+```
+
 ## ViteConfig.js
 La configuración de este archivo me va a permitir reconocer los demás archivos html, si no tengo esta configuración mi página solo procesaria el index.html y me ignora los demás archivos:
 ```sh

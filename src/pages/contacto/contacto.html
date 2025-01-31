@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drumstore - contacto</title>
+</head>
+<body>
+
+    <header class="main-header">
+        <input type="checkbox" id="menu">
+        
+        <nav class="nav-bar">
+          <ul class="nav-bar__nav-list">
+            <li class="nav-bar__nav-item">
+              <a href="src/pages/contacto/contacto.html" target="_self" class="nav-bar__nav-link">Inicio</a>
+            </li>
+            <li class="nav-bar__nav-item">
+              <a href="" class="nav-bar__nav-link">Alta</a>
+            </li>
+            <li class="nav-bar__nav-item">
+              <a href="" class="nav-bar__nav-link">Nosotros</a>
+            </li>
+            <li class="nav-bar__nav-item">
+              <a href="" class="nav-bar__nav-link">Contacto</a>
+            </li>
+          </ul> <!-- nav-bar__nav-list -->
+        </nav> <!-- nav-bar -->
+  
+        <div class="search-bar">
+          <div class="search-bar__logo-container">
+            <img class="search-bar__logo-img" src="/logo/ds-logo-sf.png" alt="logo ds">
+          </div>
+          <form action="#" class="search-bar__form-container">
+            <label for="busqueda" class="search-bar__form-label">
+              <img class="search-bar__logo-search" src="/logo/logo-search.png" alt="logo del bucador">
+            </label>
+            <input type="search" id="busqueda" class="search-bar__form-search">
+            <button type="submit" class="search-bar__form-submit">Buscar</button>
+          </form> <!-- search-bar__logo-container -->
+          <div class="search-bar__carrito-container">
+            <img class="search-bar__cart-logo" src="/logo/cart-logo.png" alt="logo de carro">
+          </div>
+          <div class="menu-toogle">
+            <label for="menu" class="menu-toogle__label">
+              <span class="menu-toogle__top-bread"></span>
+              <span class="menu-toogle__meat"></span>
+              <span class="menu-toogle__bottom-bread"></span>
+            </label>
+          </div> <!-- .menu-toogle -->
+        </div> <!-- .search-bar -->
+  
+      </header>
+
+      <main>
+
+        <div class="formulario">
+            <form action="#" method="post">
+                <h1>Contáctanos</h1>
+
+                <div class="formulario__datos">
+                    <label for="">Nombre *</label>
+                    <input type="text" class="formulario__entrada-datos">
+                </div>
+
+                <div class="formulario__datos">
+                    <label for="">Apellido *</label>
+                    <input type="text" class="formulario__entrada-datos">
+                </div>
+
+                <div class="formulario__datos">
+                    <label for="">Email *</label>
+                    <input type="email" name="email" class="formulario__entrada-datos">
+                </div>
+
+                <div class="formulario__datos">
+                    <label for="">Escribenos un mensaje:</label>
+                    <textarea class="formulario__entrada-datos" name="mensaje"></textarea>
+                </div>                
+
+                <div class="fomulario__datos">
+                    <button type="submit">Enviar</button>
+                    <p class="formulario__texto">¡Gracias por tu mensaje!</p>
+                </div>
+
+            </form>
+        </div>
+
+      </main>
+
+      <script type="module" src="./contacto.js"></script>
+    
+</body>
+</html>
