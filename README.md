@@ -1018,6 +1018,65 @@ Dentro el elemento main que esta dentro estará el contenido del formulario, se 
 
       </main>
 ```
+### Diseño en sass (_contacto.scss):
+Le estaré dando diseño a este formulario en el archivo _contacto.scss que se encuentra src>sass>pages
+```sh
+# Diseño del título
+h1{
+    font-weight: 900;
+    color: variables.$color-3;
+    text-align: center;
+    text-shadow: 2px 3px 1px variables.$color-2;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 15px 15px 15px 15px;
+}
+
+# diseño de los textos que se encuentran arriba de los inputs
+label{
+    margin-top: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+# diseño del todo el formuario
+.formulario{
+    background-color: variables.$color-4;
+    font-size: 1.2rem; #tamaño de letras
+    height: 100%;
+    padding: 40px; #relleno
+    
+    #organizando los inputs y label
+    &__datos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__entrada-datos{
+        width: 70%;
+        padding: 4px;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        background-color: variables.$color-4;
+
+    }
+
+    #diseño del boton
+    &__boton {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: variables.$color-3;
+        cursor: pointer;
+    }
+}
+```
+
 
 ## ViteConfig.js
 La configuración de este archivo me va a permitir reconocer los demás archivos html, si no tengo esta configuración mi página solo procesaria el index.html y me ignora los demás archivos:
