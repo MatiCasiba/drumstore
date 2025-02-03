@@ -15,6 +15,11 @@ label{
     }
 
 }
+textarea{
+    resize: vertical;
+    height: 80px;
+    max-height: 200px;
+}
 
 .formulario {
     background-color: variables.$color-4;

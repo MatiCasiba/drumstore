@@ -1077,6 +1077,16 @@ label{
 }
 ```
 
+### Ajustando el elemento textarea
+En la parte donde el usuario puede dejar un mensaje (que es un elemento textarea), hice que solo se extienda hacia abajo y no a los costados, tendrá un límite de hasta donde se puede exteneder:
+```sh
+textarea{
+    resize: vertical; # me permite que se extienda solo verticalmente
+    height: 80px;
+    max-height: 200px;
+}
+``` 
+
 ### Agrego un mapa en contacto
 A parte del formulario que se encuentra en contacto, tambien le agregue un mapa con la unicación, se hace de la siguiente manera
 ```sh
