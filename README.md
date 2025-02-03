@@ -986,51 +986,38 @@ Dentro el elemento main que esta dentro estará el contenido del formulario, se 
 
         <div class="formulario">
             <form action="#" method="post">
-                <h1>Contáctanos</h1>
-
-                <div class="formulario__datos">
-                    <label for="">Nombre *</label>
-                    <input type="text" class="formulario__entrada-datos">
-                </div>
-
-                <div class="formulario__datos">
-                    <label for="">Apellido *</label>
-                    <input type="text" class="formulario__entrada-datos">
-                </div>
-
-                <div class="formulario__datos">
-                    <label for="">Email *</label>
-                    <input type="email" name="email" class="formulario__entrada-datos">
-                </div>
-
-                <div class="formulario__datos">
-                    <label for="">Escribenos un mensaje:</label>
-                    <textarea class="formulario__entrada-datos" name="mensaje"></textarea>
-                </div>                
-
-                <div class="fomulario__datos">
-                    <button type="submit">Enviar</button>
-                    <p class="formulario__texto">¡Gracias por tu mensaje!</p>
-                </div>
+                <h1 class="formulario__titulo">Contáctanos</h1>
+                
+                <div class="formulario__contenedro-datos">
+                  <div class="formulario__datos">
+                      <label for="">Nombre *</label>
+                      <input type="text" class="formulario__entrada-datos">
+                  </div>
+                  <div class="formulario__datos">
+                      <label for="">Apellido *</label>
+                      <input type="text" class="formulario__entrada-datos">
+                  </div>
+                  <div class="formulario__datos">
+                      <label for="">Email *</label>
+                      <input type="email" name="email" class="formulario__entrada-datos">
+                  </div>
+                  <div class="formulario__datos">
+                      <label for="">Escribenos un mensaje:</label>
+                      <textarea class="formulario__entrada-datos" name="mensaje"></textarea>
+                  </div>
+                  <div class="formulario__datos">
+                      <button class="formulario__boton" type="submit">Enviar</button>
+                  </div>
+                </div><!-- __contenedor-datos -->
 
             </form>
-        </div>
+        </div> <!-- formulario -->
 
       </main>
 ```
 ### Diseño en sass (_contacto.scss):
 Le estaré dando diseño a este formulario en el archivo _contacto.scss que se encuentra src>sass>pages
 ```sh
-# Diseño del título
-h1{
-    font-weight: 900;
-    color: variables.$color-3;
-    text-align: center;
-    text-shadow: 2px 3px 1px variables.$color-2;
-    border-radius: 20px;
-    padding: 5px;
-    margin: 15px 15px 15px 15px;
-}
 
 # diseño de los textos que se encuentran arriba de los inputs
 label{
@@ -1045,6 +1032,16 @@ label{
     font-size: 1.2rem; #tamaño de letras
     height: 100%;
     padding: 40px; #relleno
+
+    &__titulo{
+        font-weight: 900;
+        color: variables.$color-3;
+        text-align: center;
+        text-shadow: 2px 3px 1px variables.$color-2;
+        border-radius: 20px;
+        padding: 5px;
+        margin: 15px 15px 45px 15px;
+    }
     
     #organizando los inputs y label
     &__datos{
@@ -1074,6 +1071,25 @@ label{
         background-color: variables.$color-3;
         cursor: pointer;
     }
+}
+```
+
+### Agrego un mapa en contacto
+A parte del formulario que se encuentra en contacto, tambien le agregue un mapa con la unicación, se hace de la siguiente manera
+```sh
+<div class="formulario__contenedor-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26272.95191432217!2d-58.40476192424162!3d-34.60115252873014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac630121623%3A0x53386f2ac88991a9!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses-419!2sar!4v1738586641675!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+```
+* Su configuracion en sass:
+```sh
+
+#para centrar el mapa y darle un espacio en el margen de arriba para que no se encuentre tan pegado al boton
+&__contenedor-map{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 ```
 
