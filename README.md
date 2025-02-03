@@ -1018,6 +1018,9 @@ Dentro el elemento main que esta dentro estará el contenido del formulario, se 
 ### Diseño en sass (_contacto.scss):
 Le estaré dando diseño a este formulario en el archivo _contacto.scss que se encuentra src>sass>pages
 ```sh
+html{
+    background-color: variables.$color-4;
+}
 
 # diseño de los textos que se encuentran arriba de los inputs
 label{
@@ -1091,6 +1094,110 @@ A parte del formulario que se encuentra en contacto, tambien le agregue un mapa 
     align-items: center;
     margin-top: 30px;
 }
+```
+
+### Breakpoints del contacto
+Verás que el formulario actuará de diferente manera respecto a sus posiciones y tamaños, te mostraré como lo trabajé:
+* medium -> cuando la pnatalla sea >= 768px:
+```sh
+label{
+
+    @media screen and (min-width: 768px) {
+        &{
+            font-weight: 600;
+        }
+    }
+}
+
+.formulario{
+    @media screen and (min-width: 768px) {
+
+        &{
+            font-size: 1.5rem; #tamaño de la letra
+        }
+
+        &__entrada-datos {
+            width: 50%;
+        }
+
+        iframe{
+            width: 70%;
+        }
+    }
+}
+```
+
+* Extra-large -> cuando la pantalla sea >= 1200px. Cuando la pantalla alcance este valor, el formulario y el mapa estará uno al lado del otro, para lograrlo lo trabajé de la siguiente manera:
+```sh
+@media screen and (min-width: 1200px) {
+
+        #aplique display: flex al form en vez de a la clase .formulario
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; # hago que los elementos dentro del form se alineen arriba (en la parte superior) en lugar de centrarse verticalmente
+            gap: 10px; 
+        }
+
+        &__contenedor-datos {
+            flex: 1;
+            max-width: 500px;
+        }
+        &__contenedor-map {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        #los flex: 1 en los dos contenedores, hace qye ambos ocupen el mismo espacio disponible dentro del form
+
+        &__entrada-datos {
+            width: 70%;
+            font-size: 1.1rem;
+        }
+
+        &__boton{
+            font-size: 1.1rem;
+        }
+        &__boton:hover{
+            box-shadow: 3px 5px 10px black;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 500px;
+            height: 580px;
+        }
+    }
+```
+
+* Extra extra large -> cuando la pantalla sea >= 1400. Notarás que no se extiende el formulario ni el mapa, tambien que queda centrado, para lograrlo, lo trabajé del siguiente modo:
+```sh
+@media screen and (min-width: 1400px){
+        &{
+            display: contents;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+
+        form{
+            max-width: 1300px; # no se extendrá más de esto
+            width: 100%; # ocupará el ancho total del espacio proporcionado
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0 auto; # centro el formulario en la pantalla
+        }
+
+        &__entrada-datos{
+            padding: 8px;
+            font-size: 1.2rem;
+        }
+
+        iframe{
+            height: 600px;
+        }
+        
+    }
 ```
 
 
