@@ -29,11 +29,13 @@ img{
     &__textos{
         font-size: 1.4rem;
         letter-spacing: 1px;
+        margin-top: 20px;
         margin-bottom: 15px;
         font-weight: 500;
     }
 
     &__image-drummers{
+        
         view-timeline-name: --image;
         view-timeline-axis: --block;
 
@@ -44,5 +46,64 @@ img{
         animation-fill-mode: both;
 
         border-radius: 5px;
+        margin-bottom: 20px;
     }
+
+    @media screen and (min-width: 768px){
+        &__titulo{
+            margin-left: 15%;
+        }
+        &__textos{
+            max-width: 70%;
+            font-size: 1.8rem;
+            margin: 0 auto;
+        }
+
+        &__image-drummers{
+            display: block;
+            margin: 0 auto;
+            max-width: 70%;
+        }
+    }
+
+    @media screen and (min-width: 992px){
+        &__textos{
+            font-size: 1.5rem;
+        }
+    }
+
+    @media screen and (min-width: 1200px){
+
+        &__titulo{
+            text-align: center;
+            margin: 0;
+            margin-bottom: 50px;
+        }
+        
+        &__textos{
+            font-size: 1.4rem;
+            max-width: 60%;
+        }
+
+        &__image-drummers{
+            max-width: 60%;
+        }
+    }
+
+    @media screen and (min-width: 1400px){
+        &{
+            max-width: 1100px;
+            margin: 40px auto;
+        }
+
+        &__titulo{
+            text-align: center;
+            font-size: 3rem;
+        }
+        &__textos{
+            font-size: 1.4rem;
+        }
+    }
+
+
 }

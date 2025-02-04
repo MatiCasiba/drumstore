@@ -1292,6 +1292,84 @@ Como mencioné anteriormente, voy a estaragregando una animación a las imágene
 ```
 * keyframes show: tendrá 2 puntos, el from que será el momento del 0% donde tendremos una opacidad de 0 y la escala al 25% (las imagenes cuando se inicien será transparentes y que sean un 25% de su tamaño). Despues al final tendremos opacidad de 1 (veremos la imagen sin ninguna transparencia), y la escala estará al 100%, osea que la imagen ocupara lo que debería de ocupar
 
+### Breakpoints en el archivo nosotros.html
+Estaré ajustando los tamaños de letra e imagen en cada tipo de pantalla
+* Medium -> Cuanndo la pantalla sea >=768px:
+```sh
+.info{
+
+    @media screen and (min-width: 768px){
+        &__titulo{
+            margin-left: 15%;
+        }
+        &__textos{
+            max-width: 70%;
+            font-size: 1.8rem;
+            margin: 0 auto;
+        }
+
+        &__image-drummers{
+            display: block;
+            margin: 0 auto; # centra la imagen horizontalmente
+            max-width: 70%;
+        }
+    }
+```
+
+* Large -> Cuanndo la pantalla sea >=992px:
+```sh
+.info{
+    @media screen and (min-width: 992px){
+        &__textos{
+            font-size: 1.5rem;
+        }
+    }
+}
+```
+
+* Extra large -> Cuanndo la pantalla sea >=1200px:
+```sh
+.info{
+    @media screen and (min-width: 1200px){
+
+        &__titulo{
+            text-align: center;
+            margin: 0;
+            margin-bottom: 50px;
+        }
+        
+        &__textos{
+            font-size: 1.4rem;
+            max-width: 60%;
+        }
+
+        &__image-drummers{
+            max-width: 60%;
+        }
+    }
+}
+```
+
+* Extra extra large -> Cuanndo la pantalla sea >=1400px:
+```sh
+.info{
+    @media screen and (min-width: 1400px){
+        &{
+            max-width: 1100px; # no se podrá extender más de este tamño
+            margin: 40px auto;
+        }
+
+        &__titulo{
+            text-align: center;
+            font-size: 3rem;
+        }
+        &__textos{
+            font-size: 1.4rem;
+        }
+    }
+}
+```
+
 ## ViteConfig.js
 La configuración de este archivo me va a permitir reconocer los demás archivos html, si no tengo esta configuración mi página solo procesaria el index.html y me ignora los demás archivos:
 ```sh
