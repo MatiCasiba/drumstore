@@ -1216,8 +1216,8 @@ En la carperta nosotros, se encuentra toda la descripcion del local, la estructu
     <main>
         <div class="info">
             <p class="info__textos">Hemos estado atendiendo a bateristas desde 1987 en el corazón de Amberes; Drumstore no necesita presentación. En estas páginas encontrarás un resumen de los productos y servicios que ofrecemos.</p>
-            <img class="info__image-drummers" src="../../../public/drumers/drumer.webp" alt="imagen de baterista">
             <p class="info__textos">Además de las numerosas marcas con las que trabajamos, también puedes contactarnos para reparaciones de baterías, backline y alquileres.</p>
+            <img class="info__image-drummers" src="../../../public/drumers/drumer.webp" alt="imagen de baterista">
             <p class="info__textos">Si quieres deshacerte de esa batería vieja que tienes en el ático, simplemente contáctanos.</p>
             <img class="info__image-drummers" src="../../../public/drumers/jen-ledger.webp" alt="imagen de baterista">
             <p class="info__textos">Sabemos que comprar un instrumento de percusión requiere un ambiente tranquilo, donde no sea un vendedor quien hable, sino el propio instrumento. Por ello, hemos decidido trasladar nuestra tienda a un lugar tranquilo fuera de la ciudad, donde solo atendemos con cita previa. Conversamos sobre lo que buscas, preparamos un set para que compares distintos productos, te asesoramos cuando es necesario, etc.</p>
@@ -1255,6 +1255,42 @@ img{
     }
 }
 ```
+
+### Animación de las imágenes
+Como mencioné anteriormente, voy a estaragregando una animación a las imágenes que se notará cuando vayas haciendo scroll hacia abajo, te mostraré como lo eh hecho:
+```sh
+@keyframes show {
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+.info{
+
+    &__image-drummers{
+        view-timeline-name: --image; # este nombre está enlasado al scroll
+        view-timeline-axis: --block; # le digo que eje es el que tiene que mirar el scroll, en este caso el vertical
+
+        animation-timeline: --image; #enlaso el escroll y el elemento que se va a animar
+        animation-name: show; #la animación que voy a usar
+
+        animation-range: entry 25% cover 60%;
+        #cuando el usurio está viendo el 25% de la imagen, entonces es cuando se empieza animar
+        # termina totalmente la animaciónm cuando el elemento se esté mostrando en un 60%
+
+        animation-fill-mode: both; # relleno la animación hacia los dos sentidos, yendo para adelante y hacia atrás, sin esto el problema que tengo es que va a estar la animación al 100% y cuando inicie empezará desde 0.
+
+        border-radius: 5px;
+    }
+}
+
+```
+* keyframes show: tendrá 2 puntos, el from que será el momento del 0% donde tendremos una opacidad de 0 y la escala al 25% (las imagenes cuando se inicien será transparentes y que sean un 25% de su tamaño). Despues al final tendremos opacidad de 1 (veremos la imagen sin ninguna transparencia), y la escala estará al 100%, osea que la imagen ocupara lo que debería de ocupar
 
 ## ViteConfig.js
 La configuración de este archivo me va a permitir reconocer los demás archivos html, si no tengo esta configuración mi página solo procesaria el index.html y me ignora los demás archivos:

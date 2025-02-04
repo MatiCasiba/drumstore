@@ -4,13 +4,45 @@ img{
     width: 100%;
     height: auto;
 }
+
+@keyframes show {
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
 .info{
     margin: 50px 50px 50px 50px;
+
+    &__titulo{
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        color: variables.$color-3;
+        text-shadow: 3px 3px 4px variables.$color-1;
+    }
     
     &__textos{
         font-size: 1.4rem;
         letter-spacing: 1px;
         margin-bottom: 15px;
         font-weight: 500;
+    }
+
+    &__image-drummers{
+        view-timeline-name: --image;
+        view-timeline-axis: --block;
+
+        animation-timeline: --image;
+        animation-name: show;
+
+        animation-range: entry 25% cover 60%;
+        animation-fill-mode: both;
+
+        border-radius: 5px;
     }
 }
