@@ -1,0 +1,16 @@
+@use '../base/variables';
+
+img{
+    width: 100%;
+    height: auto;
+}
+.info{
+    margin: 50px 50px 50px 50px;
+    
+    &__textos{
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+}

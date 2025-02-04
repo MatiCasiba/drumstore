@@ -1216,16 +1216,45 @@ En la carperta nosotros, se encuentra toda la descripcion del local, la estructu
     <main>
         <div class="info">
             <p class="info__textos">Hemos estado atendiendo a bateristas desde 1987 en el corazón de Amberes; Drumstore no necesita presentación. En estas páginas encontrarás un resumen de los productos y servicios que ofrecemos.</p>
+            <img class="info__image-drummers" src="../../../public/drumers/drumer.webp" alt="imagen de baterista">
             <p class="info__textos">Además de las numerosas marcas con las que trabajamos, también puedes contactarnos para reparaciones de baterías, backline y alquileres.</p>
             <p class="info__textos">Si quieres deshacerte de esa batería vieja que tienes en el ático, simplemente contáctanos.</p>
+            <img class="info__image-drummers" src="../../../public/drumers/jen-ledger.webp" alt="imagen de baterista">
             <p class="info__textos">Sabemos que comprar un instrumento de percusión requiere un ambiente tranquilo, donde no sea un vendedor quien hable, sino el propio instrumento. Por ello, hemos decidido trasladar nuestra tienda a un lugar tranquilo fuera de la ciudad, donde solo atendemos con cita previa. Conversamos sobre lo que buscas, preparamos un set para que compares distintos productos, te asesoramos cuando es necesario, etc.</p>
+            <img class="info__image-drummers" src="../../../public/drumers/people-mapex.webp" alt="imagen de baterista">
             <p class="info__textos">En un mundo de automatización, centros de llamadas y generalización, hemos elegido un enfoque completamente personalizado para nuestros clientes.</p>
             <p class="info__textos">Ofrecemos soporte técnico profesional para baterías, tanto en escenarios como en estudios de grabación. Alquilamos baterías, platillos y una amplia variedad de instrumentos de percusión para conciertos y estudios.</p>
+            <img class="info__image-drummers" src="../../../public/drumers/jay-weinberg.webp" alt="imagen de baterista">
             <p class="info__textos">Los productos profesionales y exclusivos para bateristas son nuestra pasión. Envíanos tu rider y te daremos nuestra mejor oferta.</p>
         </div>
       </main>
 ```
+### Imagenes
+Eh agregado imagenes en nosotros.html, tendrán una clase que me serviran para despues darle diseño a las imágenes
+```sh
+<img class="info__image-drummers" src="../../../public/drumers/drumer.webp" alt="imagen de baterista">
+```
 
+### Diseño de nosotros
+Lo  que haré en el archivo _nosotros.scc, iré trabajando con ajustes de tamaño y una animación en las imágenes
+
+* Ajustes de tamaños:
+```sh
+img{
+    width: 100%;
+    height: auto;
+}
+.info{
+    margin: 50px 50px 50px 50px;
+    
+    &__textos{
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+}
+```
 
 ## ViteConfig.js
 La configuración de este archivo me va a permitir reconocer los demás archivos html, si no tengo esta configuración mi página solo procesaria el index.html y me ignora los demás archivos:
