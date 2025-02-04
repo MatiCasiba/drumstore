@@ -1210,6 +1210,22 @@ label{
     }
 ```
 
+## Nosotros
+En la carperta nosotros, se encuentra toda la descripcion del local, la estructura de esta lo hice simple:
+```sh
+    <main>
+        <div class="info">
+            <p class="info__textos">Hemos estado atendiendo a bateristas desde 1987 en el corazón de Amberes; Drumstore no necesita presentación. En estas páginas encontrarás un resumen de los productos y servicios que ofrecemos.</p>
+            <p class="info__textos">Además de las numerosas marcas con las que trabajamos, también puedes contactarnos para reparaciones de baterías, backline y alquileres.</p>
+            <p class="info__textos">Si quieres deshacerte de esa batería vieja que tienes en el ático, simplemente contáctanos.</p>
+            <p class="info__textos">Sabemos que comprar un instrumento de percusión requiere un ambiente tranquilo, donde no sea un vendedor quien hable, sino el propio instrumento. Por ello, hemos decidido trasladar nuestra tienda a un lugar tranquilo fuera de la ciudad, donde solo atendemos con cita previa. Conversamos sobre lo que buscas, preparamos un set para que compares distintos productos, te asesoramos cuando es necesario, etc.</p>
+            <p class="info__textos">En un mundo de automatización, centros de llamadas y generalización, hemos elegido un enfoque completamente personalizado para nuestros clientes.</p>
+            <p class="info__textos">Ofrecemos soporte técnico profesional para baterías, tanto en escenarios como en estudios de grabación. Alquilamos baterías, platillos y una amplia variedad de instrumentos de percusión para conciertos y estudios.</p>
+            <p class="info__textos">Los productos profesionales y exclusivos para bateristas son nuestra pasión. Envíanos tu rider y te daremos nuestra mejor oferta.</p>
+        </div>
+      </main>
+```
+
 
 ## ViteConfig.js
 La configuración de este archivo me va a permitir reconocer los demás archivos html, si no tengo esta configuración mi página solo procesaria el index.html y me ignora los demás archivos:
