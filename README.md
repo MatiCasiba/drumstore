@@ -1210,6 +1210,22 @@ label{
     }
 ```
 
+### Modificiacion del sass
+En el archivo contacto.html le agregué clases a los labels y modifiqué la configuración de este, el motivo por el cual lo hice es porque mientras estaba configurando los labels del formulario, estaba tocando a la vez los del index.html, lo cual me modificó el header que tiene el index. Entonces para solucionar esto, le agregué clases a los labels de contacto.html:
+```sh
+# un ejemplo en html
+<label class="formulario__labels" for="">Nombre *</label>
+
+# sass
+.formulario{
+    &__labels{
+        margin-top: 20px;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+}
+```
+
 ## Nosotros
 En la carperta nosotros, se encuentra toda la descripcion del local, la estructura de esta lo hice simple:
 ```sh

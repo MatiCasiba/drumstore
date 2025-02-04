@@ -31,7 +31,7 @@
     }
 
     &:checked ~ .search-bar .menu-toogle .menu-toogle__label{
-        background-color: yellow;
+        background-color: variables.$color-3;
     }
 }
 
@@ -162,6 +162,7 @@
     }
 
     &__form-container{
+        
         padding: 1rem;
         display: flex;
         flex-basis: 1000px;
@@ -179,8 +180,9 @@
         
     }
     &__logo-search{
-        max-height: 20px;
-
+        max-height: 25px;
+        
+        
         @media screen and (min-width: 992px){
             &{
                 max-height: 30px;
@@ -191,7 +193,7 @@
 
     &__form-search{
         background-color: variables.$color-4;
-        margin-left: 10px;
+        margin-left: 7px;
         border-radius: 20px;
 
         @media screen and (min-width: 768px) {
@@ -265,10 +267,11 @@
     flex: 0 0 3rem;
     position: relative;
     cursor: pointer;
+    height: 50px;
 
     &__label {
         display: block;
-        background-color: black;
+        /* background-color: black; */
         height: 100%;
     }
 

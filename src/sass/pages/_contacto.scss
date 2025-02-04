@@ -3,18 +3,7 @@
 html{
     background-color: variables.$color-4;
 }
-label{
-    margin-top: 20px;
-    letter-spacing: 2px;
-    font-weight: 700;
 
-    @media screen and (min-width: 768px) {
-        &{
-            font-weight: 600;
-        }
-    }
-
-}
 textarea{
     resize: vertical;
     height: 80px;
@@ -35,6 +24,12 @@ textarea{
         border-radius: 20px;
         padding: 5px;
         margin: 15px 15px 45px 15px;
+    }
+
+    &__labels{
+        margin-top: 20px;
+        letter-spacing: 2px;
+        font-weight: 700;
     }
     
     &__datos {
@@ -78,6 +73,10 @@ textarea{
 
         &{
             font-size: 1.5rem;
+        }
+
+        &__labels{
+            font-weight: 600
         }
 
         &__entrada-datos {
