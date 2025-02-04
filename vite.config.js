@@ -5,7 +5,7 @@ export default{
         devSourcemap: true // configuramos para ver la linea donde esta escrita la regla css
     },
     build: {
-        rolluOptions: {
+        rollupOptions: {
             input:{
                 main: resolve(__dirname, 'index.html'),
                 contacto: resolve(__dirname, 'src/pages/contacto/contacto.html'),
