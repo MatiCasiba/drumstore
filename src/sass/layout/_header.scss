@@ -47,18 +47,17 @@
         justify-content: center;
         list-style-type: none;
         background: variables.$color-3;
+        font-size: 1rem;
 
         @media screen and (min-width: 992px){
             &{
                 flex-direction: row;
                 justify-content: center;
-                font-size: 0.7rem;
+                
             }
         }
 
-        @media screen and (min-width: 1200px){
-            font-size: 0.9rem;
-        }
+        //! ELIMINÉ EL MEDIA DE >=1200px
     }
 
     &__nav-item{
@@ -92,7 +91,7 @@
             &{
                 background: variables.$color-3;
                 color: variables.$color-4;
-                font-size: .8rem;
+                font-size: .9rem;
             }
             &::after {
                 content: "";
@@ -141,9 +140,8 @@
     height: 3.7rem;
     margin: 0 auto;
     
-
     &__logo-container{
-        width: 18.75rem;
+        width: 5.75rem;
         height: 3.5rem;
 
         @media screen and (min-width: 992px){
@@ -156,9 +154,23 @@
     }
 
     &__logo-img{
-        max-width: 100%; 
-        max-height: 100%; 
-        object-fit: contain;
+        opacity: 0;
+
+        @media screen and (min-width: 576px) {
+            &{
+                opacity: 1;
+                width: 60px;
+                object-fit: contain;
+                
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            &{
+               width: 100px;
+               position: relative; 
+            }
+        }
     }
 
     &__form-container{
@@ -180,12 +192,17 @@
         
     }
     &__logo-search{
-        max-height: 25px;
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 30px; 
+        max-height: 30px;
+        object-fit: contain;
+        flex-shrink: 0;
         
         
         @media screen and (min-width: 992px){
             &{
-                max-height: 30px;
+                max-height: 35px;
             }
         }
         
@@ -193,8 +210,9 @@
 
     &__form-search{
         background-color: variables.$color-4;
-        margin-left: 7px;
-        border-radius: 20px;
+        margin-left:10px;
+        padding-left: 10px;
+        border-radius: 10px;
 
         @media screen and (min-width: 768px) {
             & {
@@ -219,7 +237,7 @@
     &__form-submit{
         background-color: variables.$color-4;
         margin-left: 2px;
-        border-radius: 20px;
+        border-radius: 10px;
         font-size: 0.8rem;
         padding: 5px;
 
@@ -244,8 +262,12 @@
     }
 
     &__cart-logo{
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 30px; 
         max-height: 30px;
         object-fit: contain;
+        flex-shrink: 0;
         
         @media screen and (min-width: 768px){
             max-height: 35px;
@@ -271,7 +293,6 @@
 
     &__label {
         display: block;
-        /* background-color: black; */
         height: 100%;
     }
 

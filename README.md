@@ -1,6 +1,6 @@
 * Nombre: Matias Casiba
 * Link Repo GitHub: https://github.com/MatiCasiba/drumstore
-* Link Netlify:
+* Link Netlify: https://drumstore-ds.netlify.app/
 
 # Proyecto Integrador - Etapa 1
 En este proyecto crearé una página de productos con sus descripciones, trabajaré con html, scss y javaScript, todo esto estará hecho con vanilla:
@@ -409,6 +409,55 @@ También eh cambiado sus colores de fondo, lo encontrarás como: variables.$colo
         }
     }
 
+}
+```
+* ACTUALIZACIÓN: eh modificado el sass del header, modifique el tamaño de los logos. Ahora el logo de la tienda se oculta cuando el dipositivo se mantenga en el rango de <576px, cuando sea >=576px, el logo se mostrará y cuando sea >=1200px ocupara gran parte del alto del header. Lo hice de la siguiente manera:
+```sh
+.search-bar{
+    &__logo-img{
+        opacity: 0; # oculto el logo
+
+        @media screen and (min-width: 576px) {
+            &{
+                //!nuevo
+                opacity: 1; # muestro el logo
+                width: 60px;
+                object-fit: contain;
+                
+            }
+        }
+
+        @media screen and (min-width:1200px) {
+            &{
+               width: 100px;
+               position: relative; #se posisionará por arriba de otra clase o elemento que haya
+            }
+        }
+    }
+
+    &__logo-search{
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 30px; 
+        max-height: 30px;
+        object-fit: contain;
+        flex-shrink: 0; # no permite que se reduzcan en flexbox
+        
+    }
+
+    &__form-search{
+        padding-left: 10px; # tendrá un espacio dentro del input al momento de escribir
+    }
+
+    &__cart-logo{
+        min-width: 20px;
+        min-height: 20px;
+        max-width: 30px; 
+        max-height: 30px;
+        object-fit: contain;
+        flex-shrink: 0;
+        
+    }
 }
 ```
 
