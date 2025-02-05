@@ -411,6 +411,58 @@ También eh cambiado sus colores de fondo, lo encontrarás como: variables.$colo
 
 }
 ```
+* Animación animación del menu toogle -> el menu toogle al momento de ser activcado, se hará una cruz y las listas tendrán una animación de caida:
+```sh
+# estaré trabajando en la animacion de caida de las listas, que luego lo usaré en el &:checked + nav.bar
+@keyframes dropdown{
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#menu {
+    display: none;
+
+    &:checked + .nav-bar {
+        display: block;
+        animation: dropdown 0.5s ease-in-out;
+    }
+
+    &:checked ~ .search-bar .menu-toogle { #acá es donde estaré haciendo un cruz al momento de ser activado
+        .menu-toogle__top-bread {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toogle__meat {
+            opacity: 0;
+        }
+
+        .menu-toogle__bottom-bread {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    }
+}
+
+.menu-toogle{
+    &__top-bread,
+    &__meat,
+    &__bottom-bread{
+        display: block;
+        background-color: #333;
+        height: .2rem;
+        position: absolute;
+        left: .5rem;
+        right: .5rem;
+        transition: all 0.3s ease-in-out; # le dará el efecto de que se va transformando en una cruz en 0.3s
+    }
+}
+```
+
 * ACTUALIZACIÓN: eh modificado el sass del header, modifique el tamaño de los logos. Ahora el logo de la tienda se oculta cuando el dipositivo se mantenga en el rango de <576px, cuando sea >=576px, el logo se mostrará y cuando sea >=1200px ocupara gran parte del alto del header. Lo hice de la siguiente manera:
 ```sh
 .search-bar{
