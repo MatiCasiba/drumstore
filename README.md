@@ -212,6 +212,53 @@ En esta carpeta, se encontrará el diseño de las tarjetas, se han construido de
     
 }
 ```
+* _slider -> En esta carpeta de componentes se encontrár el archivo slider que agregué, este se encontrará en el index.html que está dentro de un contenedor con la clase "slider", esto dentro del elemento main. El slider será automático, el usuario no podrá ionteractuar con el ya quie irá avanzando solo, te mostraré como configuré el scss, el alto de la imagen irá cambiando mediante los media queries:
+```sh
+.slider {
+    background-image: url(../../public/images-slider/zildjian-chroma-pack-lifstyle.webp);
+    background-size: cover;
+    background-position: center;
+    position: relative; # me permite que el slider respete su lugar en el flujo normal
+    width: 100%;
+    height: 200px; # ajusto la altura
+    animation: efecto linear infinite 15s;
+
+    @media screen and (min-width: 768px) {
+        &{
+            height: 300px;
+        }
+    }
+    
+    @media screen and (min-width: 992px){
+        &{
+            height: 430px;
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        &{
+            height: 450px;
+            max-width: 1250px;
+            margin:  0 auto;
+        }
+    }
+}
+
+# creo la animacion con las imágenes
+@keyframes efecto{
+    20%{
+        background-image: url(../../public/images-slider/auriculares-zildjian.webp);
+    }
+    40%{
+        background-image: url(../../public/images-slider/dark_cymbal_pack_1.webp);
+    }
+    60%{
+        background-image: url(../../public/images-slider/ALCHEM-E_Gold-EX_Front-Side.webp);
+    }
+    80%{
+        background-image: url(../../public/images-slider/l80_low_volume_cymbal_pack.webp);
+    }
+}
+```
 
 #### Carpeta layout
 En esta carpeta se encontrará todo el diseño del elemento header del html, la barra de navegación, el menu toogle, el buscador, un carrito, entre otras cosas:
