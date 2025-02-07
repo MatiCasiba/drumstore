@@ -84,6 +84,52 @@ Dentro del elemento main, contendrá las tarjetas de los productos, donde verás
 ```
 En el archivo scss le estarémos dando diseño a las tarjetas
 
+### Footer
+La página tendrá un footer, dentro de este verás las tarjetas con la que se manejaría la tienda, más info acerca del metodo de compra, el logo de la tienda con iconos de redes sociales y un eslogan. Lo armé de la siguiente forma:
+```sh
+<footer>
+      <div class="content-footer">
+
+        <div class="content-footer__empresa">
+          <div class="content-footer__logo-footer">
+            <img src="" alt="logo drumstore">
+            <p>Bateias, parches, platillos y palillos de calidad</p> <!-- el slogan -->
+          </div> <!-- __logo-footer -->
+          <div class="content-footer__logo-redes">
+            <img src="" alt="logo facebook">
+            <img src="" alt="logo instagram">
+            <img src="" alt="logo email">
+            <img src="" alt="logo github">
+          </div> <!-- __logo-redes -->
+        </div> <!-- __empresa -->
+
+        <div class="content-footer__pays">
+          <div class="content-footer__contenedor-informacion">
+
+            <div class="content-footer__tarjetas-info">
+              <img class="content-footer__icons" src="" alt="imagen casa">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, hic.</p>
+            </div>
+            <div class="content-footer__tarjetas-info">
+              <img class="content-footer__icons" src="" alt="imagen tarjeta de pago">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ullam?</p>
+            </div>
+
+          </div> <!-- __contenedor-informacion -->
+        </div> <!-- __pays -->
+
+        <div class="content-footer__content-logos">
+          <img src="" alt="" class="content-footer__logos-pays">
+          <img src="" alt="" class="content-footer__logos-pays">
+          <img src="" alt="" class="content-footer__logos-pays">
+          <img src="" alt="" class="content-footer__logos-pays">
+        </div> <!-- __contents-logos -->
+
+      </div> <!-- .content-footer -->
+    </footer>
+```
+
+
 ### Carpeta SASS y sus archivos
 Dentro de la carpeta sass (que se encuentra ubicada en la carpeta src) habrán carpetas que contendrán archivos dentro de las carpetas, aquí es donde estaré dando diseño a toda la página
 

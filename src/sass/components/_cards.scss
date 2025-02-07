@@ -9,7 +9,7 @@ main{
 
     &__header{
         width: 100%;
-        max-width: 1130px;
+        max-width: 1250px;
         margin: 0 auto;
     }
 }
@@ -58,8 +58,8 @@ main{
     &__content{
         display: flex;
         flex-direction: column;
-        justify-content: space-between; // distribuyo el contenido y empujo el botón hacia abajo
-        flex-grow: 1; // logro que el contenido ocupe el espacio restante
+        justify-content: space-between; 
+        flex-grow: 1; 
         padding: 2%;
 
     }
@@ -69,13 +69,13 @@ main{
     &__description{
         margin-top: 5px;
         width: 250px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     &__boton {
         text-decoration: none;
         font-size: 0.8rem;
-        margin-top: auto; // Empuja el botón hacia abajo
+        margin-top: auto; 
         display: block;
         text-align: center;
         padding: 10px;
@@ -113,8 +113,8 @@ main{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            flex-grow: 1; // Ocupa todo el espacio disponible
-            height: 100%; // Asegura que ocupe toda la altura de la tarjeta
+            flex-grow: 1; 
+            height: 100%; 
         }
 
         &__description{
@@ -123,7 +123,7 @@ main{
         }
 
         &__boton {
-            margin-top: 20px; // Empuja el botón al final del contenido
+            margin-top: 20px; 
             display: block;
             text-align: center;
             padding: 10px;
@@ -138,7 +138,7 @@ main{
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Asegura que los elementos se distribuyan correctamente */
+            justify-content: space-between;
         }
     
         &__image-container {
@@ -160,7 +160,7 @@ main{
         }
     
         &__content {
-            flex: 1; /* Permite que el contenido crezca, dejando espacio para el botón */
+            flex: 1;
             display: flex;
             flex-direction: column;
             padding: 0;
@@ -168,12 +168,12 @@ main{
         }
     
         &__boton {
-            margin-top: 20px; /* Empuja el botón hacia la parte inferior */
+            margin-top: 20px;
             padding: 10px;
             text-align: center;
             display: block;
-            width: 100%; /* Hace que ocupe todo el ancho de la tarjeta */
-            background-color: variables.$color-1; /* Asegura que tenga un fondo visible */
+            width: 100%; 
+            background-color: variables.$color-1; 
             color: variables.$color-3;
         }
     
