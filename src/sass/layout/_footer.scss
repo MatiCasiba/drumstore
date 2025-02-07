@@ -1,0 +1,66 @@
+@use '../base/variables';
+
+.content-footer{
+    background: variables.$color-3;
+    color: variables.$color-2;
+    padding: 1em;
+    margin-top: 5px;
+    margin-bottom: 0;
+
+    &__empresa{
+        font-size: 1.2rem;
+    }
+    &__logo-eslogan{
+        padding: 10px;
+    }
+
+    &__logo-footer{
+        display: flex;
+        width: 30%;
+        margin: auto;
+    }
+    &__titulo-footer{
+        text-align: center;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+    &__eslogan{
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+    }
+    &__logo-redes{
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    &__loguito{
+        width: 40px;
+    }
+
+    &__pays{
+        width: 100%;
+        margin-top: 40px;
+
+    }
+    &__tarjetas-info{
+        display: flex; // el logo y la info, están uno al lado del otro
+        width: 90%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+    &__icons{
+        width: 100px;
+    }
+    &__text-info{
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+        
+    }
+    
+}

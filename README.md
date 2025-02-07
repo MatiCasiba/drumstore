@@ -128,7 +128,74 @@ La página tendrá un footer, dentro de este verás las tarjetas con la que se m
       </div> <!-- .content-footer -->
     </footer>
 ```
+* Su diseño se encuentra en __footer.scss:
+```sh
+.content-footer{
+    background: variables.$color-3;
+    color: variables.$color-2;
+    padding: 1em; #daré un relleno para que el contenido dentro no esté pegado a los márgenes
+    margin-top: 5px; #doy un pequeño espacio entre el footer y la última tarjeta
+    margin-bottom: 0;
 
+    # diseño del logo, su titulo y su texto
+    &__empresa{
+        font-size: 1.2rem; # tamaño de las letras
+    }
+    &__logo-eslogan{
+        padding: 10px; # doy un poco de espacio al contenido dentro
+    }
+    &__logo-footer{ # centrando el logo y dando un tamaño
+        display: flex;
+        width: 30%;
+        margin: auto;
+    }
+    &__titulo-footer{
+        text-align: center; #centro el titulo
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+    &__eslogan{ # centro el eslogan, dando un grosor, espacio entre letras y espacio debajo
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 40px;
+    }
+    &__logo-redes{ # poniendo los iconos de las redes en una linea, centrandolas, dando espacio entre estos y debajo de ellos
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    &__loguito{ # tamaño de los iconos
+        width: 40px;
+    }
+
+    # diseño de la info acerca de la compra
+    &__pays{
+        width: 100%;
+        margin-top: 40px;
+    }
+    # una cosa aclarar, no verás tarjetas, solo nombre así la clase porque en las dos habrá un contenido distinto
+    &__tarjetas-info{
+        display: flex; # el logo y la info, están uno al lado del otro
+        width: 90%;
+        margin: 0 auto; # centro la tarjeta
+        gap: 20px;
+    }
+    &__icons{
+        width: 100px; #tamaño del dibujo
+    }
+    &__text-info{ # ajustando el tamaño, espacio y grosor del texto dentro de __tarjetas-info
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+        
+    }
+    
+}
+```
 
 ### Carpeta SASS y sus archivos
 Dentro de la carpeta sass (que se encuentra ubicada en la carpeta src) habrán carpetas que contendrán archivos dentro de las carpetas, aquí es donde estaré dando diseño a toda la página
