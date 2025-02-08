@@ -1,5 +1,8 @@
 @use '../base/variables';
 
+footer{
+    background-color: variables.$color-3;
+}
 .content-footer{
     background: variables.$color-3;
     color: variables.$color-2;
@@ -7,8 +10,27 @@
     margin-top: 5px;
     margin-bottom: 0;
 
+    @media screen and (min-width: 1200px) {
+        &{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    @media screen and (min-width: 1400px) {
+        &{
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+    }
+
     &__empresa{
         font-size: 1.2rem;
+
+        @media screen and (min-width: 1200px) {
+            max-width: 500px;
+        }
     }
     &__logo-eslogan{
         padding: 10px;
@@ -21,6 +43,10 @@
 
         @media screen and (min-width: 768px){
             width: 250px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 100px;
         }
     }
     &__titulo-footer{
@@ -62,6 +88,10 @@
         @media screen and (min-width: 768px){
             width: 60px;
         }
+
+        @media screen and (min-width: 1200px) {
+            width: 45px;
+        }
     }
 
     &__pays{
@@ -70,6 +100,13 @@
 
         @media screen and (min-width: 992px) {
             display: flex;
+        }
+
+        @media screen and (min-width: 1200px) {
+            &{
+                display: flex;
+                width: 55%;
+            }
         }
 
     }
@@ -82,6 +119,12 @@
         @media screen and (min-width:992px){
             display: block;
         }
+
+        @media screen and (min-width: 1200px) {
+            &{
+                display: block;
+            }
+        }
     }
     &__icons{
         width: 100px;
@@ -92,6 +135,12 @@
         @media screen and (min-width: 992px) {
             display: flex;   
             margin: 0 auto;
+        }
+
+        @media screen and (min-width: 1200px) {
+            &{
+                width: 100px;
+            }
         }
     }
     &__text-info{
@@ -111,6 +160,15 @@
             width: 350px;
             text-align: center;
         }
+
+        @media screen and (min-width: 1200px) {
+            &{
+                width: 200px;
+                font-size: 1.4rem;
+                margin: 0 auto;
+                margin-top: 10px;
+            }
+        }
     }
 
     &__content-cardLogos{
@@ -129,6 +187,9 @@
 
         @media screen and (min-width: 992px) {
             width: 75px;
+        }
+        @media screen and (min-width: 1200px) {
+            width: 60px;
         }
     }
     

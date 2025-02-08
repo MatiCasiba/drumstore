@@ -301,6 +301,83 @@ A medida que la pantalla se vaya agrandando, actuará de forma diferente, lo pen
     }
 }
 ```
+* Extra large: >= 1200px: Cuando se encuentre en este tamaño, cambiarán las posiciones de los contenedores, el contenedor con la clase __empresa la verás que está en la izquierda, a la derecha de este se encuentra el contenedor __pays, debajo de estos dos verás el contenedor __content-cardLogos. Para lograr esto lo trabajé del siguiente modo:
+```sh
+.content-footer{
+    @media screen and (min-width: 1200px) {
+        &{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__empresa{
+        @media screen and (min-width: 1200px) {
+            max-width: 500px; # su anocho no se puede ampliar mas de lo establecido
+        }
+    }
+    &__logo-footer{
+        @media screen and (min-width: 1200px) {
+            width: 100px;
+        }
+    }
+    &__loguito{
+        @media screen and (min-width: 1200px) {
+            width: 45px;
+        }
+    }
+
+    &__pays{
+        @media screen and (min-width: 1200px) {
+            &{
+                display: flex; # los dos contenedores se pondrán en la misma línea horizontalmente
+                width: 55%;
+            }
+        }
+    }
+    &__tarjetas-info{
+        @media screen and (min-width: 1200px) {
+            &{
+                display: block; # el icono y el texto se colocan de manera vertical
+            }
+        }
+    }
+    &__icons{
+        @media screen and (min-width: 1200px) {
+            &{
+                width: 100px;
+            }
+        }
+    }
+    &__text-info{
+        @media screen and (min-width: 1200px) {
+            &{
+                width: 200px;
+                font-size: 1.4rem;
+                margin: 0 auto; #centro el texto
+                margin-top: 10px;
+            }
+        }
+    }
+    &__logos-pays{
+        @media screen and (min-width: 1200px) {
+            width: 60px;
+        }
+    }
+}
+```
+* Extra extra large: >=1400px: Cuando la pantalla tenga este valor, haré que el contenido del footer no se extienda en el ancho total disponible, le asignaré un límite de ancho:
+```sh
+.content-footer{
+    @media screen and (min-width: 1400px) {
+        &{
+            max-width: 1250px;
+            margin: 0 auto; # centro el contenido del footer, para que no se me vaya a la izquierda cuando extiendo la pantalla
+        }
+    }
+}
+```
 
 ### Carpeta SASS y sus archivos
 Dentro de la carpeta sass (que se encuentra ubicada en la carpeta src) habrán carpetas que contendrán archivos dentro de las carpetas, aquí es donde estaré dando diseño a toda la página
@@ -940,7 +1017,7 @@ precio: "US$ 4.899,00"
 ## Breakpoints
 La página tendrá breakpoints, se pensó primero en realizarlo para un dispositivo mobil/celular, pero a medida que se agrande la pantalla (se ve en otro dispositivo, sea tablet o pc/notebook), se comportará de diferente manera la página
 
-### Breakpoints en el heder
+### Breakpoints en el header
 Todo lo trabajado del header, se encuentra en el archivo _header.scss dentro de la carpeta lyout:
 
 * Medium -> cuando la pantalla sea >=768px:
