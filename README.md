@@ -208,6 +208,100 @@ La página tendrá un footer, dentro de este verás las tarjetas con la que se m
     }
 ```
 
+#### Breakpoints del footer
+A medida que la pantalla se vaya agrandando, actuará de forma diferente, lo pensaré a los cambios a partir del >=768px, ya para dispositivos tipo tablets y computadoras:
+
+* Medium: >=768px: cuando tenga este tamaño de pantalla o más, solo agrandaré los tamaños del contenido del footer:
+```sh
+.content-footer{
+    &__logo-footer{
+        @media screen and (min-width: 768px){
+            width: 250px;
+        }
+    }
+    &__titulo-footer{
+        @media screen and (min-width: 768px){
+            font-size: 2.3rem;
+            letter-spacing: 4px;
+        }
+    }
+    &__eslogan{
+        @media screen and (min-width: 768px){
+            font-size: 1.7rem;
+            letter-spacing: 4px;
+        }
+    }
+    &__logo-redes{
+        @media screen and (min-width: 768px){
+            gap: 80px;
+        }
+    }
+    &__loguito{
+        @media screen and (min-width: 768px){
+            width: 60px;
+        }
+    }
+
+    &__icons{
+        @media screen and (min-width: 768px){
+            width: 140px;
+        }
+    }
+    &__text-info{        
+        @media screen and (min-width: 768px){
+            width: 400px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-left: 15%;
+            margin-top: 15px;
+        }
+    }
+}
+```
+
+* Large: >=992px -> Cuando tenga este tamaño de pantalla o más, aparte de ampliar los tamaños del contenido dentro del footer, también cambiará de posición los elementos dentro del contenedor de pays:
+```sh
+.content-footer{
+    &__pays{
+        @media screen and (min-width: 992px) {
+            display: flex; # las dos contenedores dentro de este,se pondrán uno al lado del otro en la misma línea horizontal 
+        }
+    }
+    &__tarjetas-info{
+        @media screen and (min-width:992px){
+            display: block; # el icono y el texto estarán de forma vertical
+        }
+    }
+    &__icons{
+        @media screen and (min-width: 992px) 
+            # centro los dos iconos
+            display: flex;   
+            margin: 0 auto;
+        }
+    }
+    &__text-info{
+        @media screen and (min-width:992px) {
+            font-size: 1.5rem;
+            width: 350px; #el ancho que tendrá el recuadro del textos
+            text-align: center; #centro el texto
+        }
+    }
+    &__content-cardLogos{
+        @media screen and (min-width: 992px) {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+    }
+    &__logos-pays{
+        @media screen and (min-width: 992px) {
+            width: 75px;
+            
+        }
+    }
+}
+```
+
 ### Carpeta SASS y sus archivos
 Dentro de la carpeta sass (que se encuentra ubicada en la carpeta src) habrán carpetas que contendrán archivos dentro de las carpetas, aquí es donde estaré dando diseño a toda la página
 

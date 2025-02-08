@@ -16,19 +16,33 @@
 
     &__logo-footer{
         display: flex;
-        width: 30%;
+        width: 150px;
         margin: auto;
+
+        @media screen and (min-width: 768px){
+            width: 250px;
+        }
     }
     &__titulo-footer{
         text-align: center;
         letter-spacing: 2px;
         margin-bottom: 10px;
+
+        @media screen and (min-width: 768px){
+            font-size: 2.3rem;
+            letter-spacing: 4px;
+        }
     }
     &__eslogan{
         text-align: center;
         font-weight: 700;
         letter-spacing: 3px;
         margin-bottom: 40px;
+
+        @media screen and (min-width: 768px){
+            font-size: 1.7rem;
+            letter-spacing: 4px;
+        }
     }
     &__logo-redes{
         display: flex;
@@ -37,14 +51,26 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 10px;
+
+        @media screen and (min-width: 768px){
+            gap: 80px;
+        }
     }
     &__loguito{
         width: 40px;
+
+        @media screen and (min-width: 768px){
+            width: 60px;
+        }
     }
 
     &__pays{
         width: 100%;
         margin-top: 40px;
+
+        @media screen and (min-width: 992px) {
+            display: flex;
+        }
 
     }
     &__tarjetas-info{
@@ -52,24 +78,58 @@
         width: 90%;
         margin: 0 auto;
         gap: 20px;
+
+        @media screen and (min-width:992px){
+            display: block;
+        }
     }
     &__icons{
         width: 100px;
+
+        @media screen and (min-width: 768px){
+            width: 140px;
+        }
+        @media screen and (min-width: 992px) {
+            display: flex;   
+            margin: 0 auto;
+        }
     }
     &__text-info{
         font-size: 1.2rem;
         font-weight: 500;
         margin-bottom: 10px;
         
+        @media screen and (min-width: 768px){
+            width: 400px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-left: 15%;
+            margin-top: 15px;
+        }
+        @media screen and (min-width:992px) {
+            font-size: 1.5rem;
+            width: 350px;
+            text-align: center;
+        }
     }
 
     &__content-cardLogos{
         display: flex;
         justify-content: space-between;
         margin-top: 50px;
+
+        @media screen and (min-width: 992px) {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
     }
     &__logos-pays{
         width: 60px;
+
+        @media screen and (min-width: 992px) {
+            width: 75px;
+        }
     }
     
 }
