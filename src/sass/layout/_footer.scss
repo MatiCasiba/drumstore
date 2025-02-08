@@ -62,5 +62,14 @@
         margin-bottom: 10px;
         
     }
+
+    &__content-cardLogos{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+    &__logos-pays{
+        width: 60px;
+    }
     
 }

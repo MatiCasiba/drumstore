@@ -196,6 +196,17 @@ La página tendrá un footer, dentro de este verás las tarjetas con la que se m
     
 }
 ```
+* Iconos de tarjetas -> al final de la página (en el dispositivo mobil), verás los iconos de las tarjetas de crédito/débito:
+```sh
+&__content-cardLogos{
+        display: flex; # pondrá a los iconos en la misma línea horizontal
+        justify-content: space-between; #ocupará todo el ancho disponible dejando espacio entre los iconos
+        margin-top: 50px; #espacio debajo
+    }
+    &__logos-pays{
+        width: 60px; #tamaño de los iconos
+    }
+```
 
 ### Carpeta SASS y sus archivos
 Dentro de la carpeta sass (que se encuentra ubicada en la carpeta src) habrán carpetas que contendrán archivos dentro de las carpetas, aquí es donde estaré dando diseño a toda la página
