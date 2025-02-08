@@ -402,10 +402,10 @@ En esta carpeta, se encontrará el diseño de las tarjetas, se han construido de
 
     &:hover &__image-container,
     &:focus &__image-container {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* estado final */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); # estado final 
     }
 
-    /*  responsive -> 992px */
+    #  responsive -> 992px
 
     @media screen and (min-width: 992px) {
         & {
