@@ -378,6 +378,36 @@ A medida que la pantalla se vaya agrandando, actuará de forma diferente, lo pen
     }
 }
 ```
+* Links en los logos de redes sociales y correo: el usuario va a poder a acceder a las redes sociales y correo en los logos que se encuentra en el footer, cuando la pantalla sea >=1200px, los logos tendrán una animación de que se agranda. Te mostraré los enlaces de los logos y el armado de un correo predeterminado, también como realicé la animacion:
+```sh
+            <a href="https://www.threads.net/@s.a.c.m.a.t" target="_blank" title="threads">
+              <img class="content-footer__loguito" src="/icons-footer/threads-icon.png" alt="logo threads">
+            </a>
+            <a href="https://www.instagram.com/s.a.c.m.a.t?igsh=cDJ1Yno0ZHppdnR1" target="_blank" title="s.a.c.m.a.t">
+              <img class="content-footer__loguito"  src="/icons-footer/instagram-icon.png" alt="logo instagram">
+            </a>
+            <a href="mailto:casibagabriel@gmail.com" target="_blank" title="correo">
+              <img class="content-footer__loguito"  src="/icons-footer/mail-icon.png" alt="logo email">
+            </a>
+            <a href="https://github.com/MatiCasiba" title="github-MatiCasiba" target="_blank">
+              <img class="content-footer__loguito"  src="/icons-footer/github-icon.png" alt="logo github">
+            </a>
+
+# la animación:
+&__loguito{
+        @media screen and (min-width: 1200px) {
+            width: 45px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover{
+                transform: scale(1.3);
+                filter: drop-shadow(20px 10px 2px #00000059); #le daré sombra a los logos
+            }
+        }
+    }
+```
+
 
 ### Carpeta SASS y sus archivos
 Dentro de la carpeta sass (que se encuentra ubicada en la carpeta src) habrán carpetas que contendrán archivos dentro de las carpetas, aquí es donde estaré dando diseño a toda la página
@@ -397,7 +427,7 @@ En la carpeta base se encontrarán los archivos _resets y typography (extraeré 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 100%; // default navegadores 16px
+    font-size: 100%; # default navegadores 16px
 }
 ```
 * _variables.scss -> este archivo va a servir para crear variables que los voy a poder aplicar en otros archivos, en este caso la usaré para manejar colores:
