@@ -1,5 +1,6 @@
+@use '../base/variables';
 .section-cards{
-    background-color: #f1f2f3;
+    background-color: variables.$color-4;
     padding: 1rem;
 }
 
