@@ -1880,4 +1880,95 @@ export default{
 }
 ```
 
+# Tema oscuro
+Le agregué un tema oscuro a la página que lo notaras en la parte de inicio, cambiará el color de fondo y las letras eh input del header. La configuración de este se encuentra en la carpeta themes>_theme.scss:
+```sh
+.dark-theme {
+    body {
+        background-color: variables.$color-2;
+    }
+
+    .nav-bar{
+        &__nav-link{
+            color: variables.$color-2;
+        }
+    }
+    .search-bar{
+        &__form-search{
+            background-color: variables.$color-2;
+            color: variables.$color-4;
+        }
+        &__form-submit{
+            background-color: variables.$color-2;
+            color: variables.$color-4;
+        }
+    }
+
+    main,
+    .section-cards,
+    .cards-container {
+        background-color: variables.$color-2;
+        color: variables.$color-4;
+    }
+
+    
+}
+
+.theme-toggle{
+    background-color: variables.$color-1;
+    border: 1px inset black;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.dark-theme .theme-toggle{
+    transform: rotate(180deg);
+}
+```
+* dark-theme lo estaré usando en el main.js, en ese archivo tendré la funcionalidad para cambiar de claro a tema oscuro:
+
+```sh
+# funcionalidad para cambiar el tema oscuro
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggle = document.querySelector('.theme-toggle');
+
+    if (themeToggle) {
+        #cargar el estado del tema
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeToggle.textContent = '⚪'; #emoji claro
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+
+            if (document.body.classList.contains('dark-theme')) {
+                themeToggle.textContent = '⚪';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '⚫';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
+});
+
+```
+* Este código usará el localStorage para recordar la eleccion del usuario, osea que si el usuario seleccionó el tema oscuro, sale de la página y vuelve a ingresar, seguirá con el tema en modo oscuro
+* Una explicación en general de este código, lo que primero hago es verificar si el usuario ya eligión un tema antes, si el localStorage tiene el tema dark, agrego la clase .dark-theme al body, también cambio el icono del botón al claro ⚪. Despues cuando el usuario hace click en el botón, alterno la clase dark-theme en el body, si el tema es oscuro, se muestra ⚪ y guardo dark en el localStorage, y si el temea es claro se muestra ⚫y guardo light en el localStorage
+* .theme-toogle es una clase que le asigne al boton donde se encuentra un emoji, este está en el index.html, dentro del contenedor search-bar y debajo del logo del local:
+
+```sh
+<div class="search-bar__logo-container">
+  <img class="search-bar__logo-img" src="/logo/ds-logo-sf.png" alt="logo ds">
+</div>
+ <button class="theme-toggle">⚫</button> 
+```
+
+
 

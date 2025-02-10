@@ -1,2 +1,49 @@
 @use '../base/variables';
 
+
+.dark-theme {
+    body {
+        background-color: variables.$color-2;
+    }
+
+    .nav-bar{
+        &__nav-link{
+            color: variables.$color-2;
+        }
+    }
+    .search-bar{
+        &__form-search{
+            background-color: variables.$color-2;
+            color: variables.$color-4;
+        }
+        &__form-submit{
+            background-color: variables.$color-2;
+            color: variables.$color-4;
+        }
+    }
+
+    main,
+    .section-cards,
+    .cards-container {
+        background-color: variables.$color-2;
+        color: variables.$color-4;
+    }
+
+    
+}
+
+.theme-toggle{
+    background-color: variables.$color-1;
+    border: 1px inset black;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+.dark-theme .theme-toggle{
+    transform: rotate(180deg);
+}
