@@ -22,11 +22,16 @@
         }
     }
 
+    html,
     main,
     .section-cards,
     .cards-container {
         background-color: variables.$color-2;
         color: variables.$color-4;
+    }
+
+    .formulario{
+        background-color: variables.$color-2;
     }
 
     
@@ -36,12 +41,12 @@
     background-color: variables.$color-1;
     border: 1px inset black;
     border-radius: 100%;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: transform 0.5s ease-in-out;
 
     &:hover{
-        transform: scale(1.1);
+        transform: scale(0.8);
     }
 }
 .dark-theme .theme-toggle{

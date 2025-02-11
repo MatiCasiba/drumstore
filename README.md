@@ -1962,6 +1962,16 @@ document.addEventListener('DOMContentLoaded', () => {
 * Este código usará el localStorage para recordar la eleccion del usuario, osea que si el usuario seleccionó el tema oscuro, sale de la página y vuelve a ingresar, seguirá con el tema en modo oscuro
 * Una explicación en general de este código, lo que primero hago es verificar si el usuario ya eligión un tema antes, si el localStorage tiene el tema dark, agrego la clase .dark-theme al body, también cambio el icono del botón al claro ⚪. Despues cuando el usuario hace click en el botón, alterno la clase dark-theme en el body, si el tema es oscuro, se muestra ⚪ y guardo dark en el localStorage, y si el temea es claro se muestra ⚫y guardo light en el localStorage
 * .theme-toogle es una clase que le asigne al boton donde se encuentra un emoji, este está en el index.html, dentro del contenedor search-bar y debajo del logo del local:
+* La misma configuración se lo añadí a los archivos nosotros.js y contacto.js y le agregué unas configuraciones para ellos del fondo oscuro:
+```sh
+# en este caso lo necesite solo para la el contenedor con la clase formulario que se encuentra en la carpeta contacto
+.dark-theme{
+    .formulario{
+        background-color: variables.$color-2;
+    }
+
+}
+```
 
 ```sh
 <div class="search-bar__logo-container">

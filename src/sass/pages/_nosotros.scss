@@ -17,9 +17,10 @@ img{
 }
 
 .info{
-    margin: 50px 50px 50px 50px;
+    margin: 0 50px 0 50px;
 
     &__titulo{
+        padding: 10px;
         margin-bottom: 30px;
         font-size: 2.5rem;
         color: variables.$color-3;
@@ -73,7 +74,7 @@ img{
     }
 
     @media screen and (min-width: 1200px){
-
+        
         &__titulo{
             text-align: center;
             margin: 0;
