@@ -1980,5 +1980,33 @@ document.addEventListener('DOMContentLoaded', () => {
  <button class="theme-toggle">⚫</button> 
 ```
 
+## Actualización del responsive
+Tenía un proble respecto al header y el footer, cuando achicaba la pantalla de los anchos, el color del header y footer se iban corriendo hacia la izquierda (en el caso del header iba empujando los elementos hacia la izquierda también). Entonces para solucionar esto, se ajustó el tamaño de las tarjetas, también el input del buscador y quité el logo, pero cuando sea un dispositivo >=576px, aparecerá el logo de buscar:
+* las cards:
+```sh
+.card {
+    min-width: 316px;
+}
+```
+* en el header:
+```sh
+&__logo-search{
+        opacity: 0;   
+
+        @media screen and (min-width: 576px) {
+            opacity: 1;
+        }
+
+&__form-search{
+        width: 100px;
+
+        @media screen and (min-width: 576px) {
+            &{
+                width: 180px;
+            }
+        }
+```
+Con estos ajustes, la página se adaptará a la mayoría de dispositivos mobiles, se verá bien tanto en los actuales como en algunos de años atrás.
+
 
 

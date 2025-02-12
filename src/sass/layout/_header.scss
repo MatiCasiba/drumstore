@@ -213,12 +213,17 @@
         
     }
     &__logo-search{
+        opacity: 0;
         min-width: 20px;
         min-height: 20px;
         max-width: 30px; 
         max-height: 30px;
         object-fit: contain;
-        flex-shrink: 0;
+        flex-shrink: 0;    
+
+        @media screen and (min-width: 576px) {
+            opacity: 1;
+        }
         
         
         @media screen and (min-width: 992px){
@@ -234,7 +239,13 @@
         margin-left:10px;
         padding-left: 10px;
         border-radius: 10px;
+        width: 100px;
 
+        @media screen and (min-width: 576px) {
+            &{
+                width: 180px;
+            }
+        }
         @media screen and (min-width: 768px) {
             & {
                 width: 70%;
